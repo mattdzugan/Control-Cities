@@ -1,0 +1,977 @@
+method,value,name,dir
+stack1D,0.2569444444444444,Interstate 55,Southbound
+stack1D,0.2553191489361702,Interstate 55,Northbound
+stack1D,0.1073170731707317,Interstate 90,Eastbound
+stack1D,0.2679900744416873,Interstate 90,Westbound
+stack1D,0.07563025210084033,Interstate 85,Eastbound
+stack1D,0.4672131147540984,Interstate 85,Westbound
+stack1D,0.09836065573770492,Interstate 57,Southbound
+stack1D,0.2459016393442623,Interstate 57,Northbound
+stack1D,0.4153846153846154,Interstate 26,Southbound
+stack1D,0.21875,Interstate 26,Northbound
+stack1D,0.18518518518518517,Interstate 82,Southbound
+stack1D,0.25925925925925924,Interstate 82,Northbound
+stack1D,0.21518987341772153,Interstate 76 (Ohio-New Jersey),Eastbound
+stack1D,0.16049382716049382,Interstate 76 (Ohio-New Jersey),Westbound
+stack1D,0.24528301886792453,Interstate 39,Southbound
+stack1D,0.5306122448979592,Interstate 39,Northbound
+stack1D,0.0,Interstate 86 (Pennsylvania-New York),Eastbound
+stack1D,0.023809523809523808,Interstate 86 (Pennsylvania-New York),Westbound
+stack1D,0.24489795918367346,Interstate 84 (Oregon-Utah),Eastbound
+stack1D,0.2905405405405405,Interstate 84 (Oregon-Utah),Westbound
+stack1D,0.64,Interstate 76 (Colorado-Nebraska),Westbound
+stack1D,0.32,Interstate 476 (Pennsylvania),Southbound
+stack1D,0.4,Interstate 476 (Pennsylvania),Northbound
+stack1D,0.1388888888888889,Interstate 43,Southbound
+stack1D,0.41935483870967744,Interstate 43,Northbound
+stack1D,0.2438423645320197,Interstate 10,Eastbound
+stack1D,0.2315035799522673,Interstate 10,Westbound
+stack1D,0.2875,Interstate 81,Southbound
+stack1D,0.24050632911392406,Interstate 81,Northbound
+stack1D,0.25,Interstate 8,Eastbound
+stack1D,0.3333333333333333,Interstate 8,Westbound
+stack1D,0.3018867924528302,Interstate 95 (Southern Segment),Southbound
+stack1D,0.07142857142857142,Interstate 95 (Southern Segment),Northbound
+stack1D,0.0782608695652174,Interstate 95 (Northern Segment),Southbound
+stack1D,0.2711864406779661,Interstate 95 (Northern Segment),Northbound
+stack1D,0.10810810810810811,Interstate 89,Southbound
+stack1D,0.32432432432432434,Interstate 89,Northbound
+stack1D,0.0,Interstate 68,Eastbound
+stack1D,0.045454545454545456,Interstate 68,Westbound
+stack1D,0.6216216216216216,Interstate 45,Southbound
+stack1D,0.43333333333333335,Interstate 45,Northbound
+stack1D,0.10526315789473684,Interstate 30,Eastbound
+stack1D,0.35294117647058826,Interstate 30,Westbound
+stack1D,0.5159235668789809,Interstate 65,Southbound
+stack1D,0.38461538461538464,Interstate 65,Northbound
+stack1D,0.9285714285714286,Interstate 37,Northbound
+stack1D,0.1906158357771261,Interstate 70,Eastbound
+stack1D,0.11711711711711711,Interstate 70,Westbound
+stack1D,0.03636363636363636,Interstate 91,Southbound
+stack1D,0.2545454545454545,Interstate 91,Northbound
+stack1D,0.14444444444444443,Interstate 25,Southbound
+stack1D,0.2681564245810056,Interstate 25,Northbound
+stack1D,0.379746835443038,Interstate 59,Southbound
+stack1D,0.1875,Interstate 59,Northbound
+stack1D,0.4051724137931034,Interstate 77,Southbound
+stack1D,0.34210526315789475,Interstate 77,Northbound
+stack1D,0.5945945945945946,Interstate 22,Eastbound
+stack1D,0.2702702702702703,Interstate 22,Westbound
+stack1D,0.38549618320610685,Interstate 20,Eastbound
+stack1D,0.2988505747126437,Interstate 20,Westbound
+stack1D,0.10114942528735632,Interstate 80,Eastbound
+stack1D,0.15550755939524838,Interstate 80,Westbound
+stack1D,0.23543123543123542,Interstate 40,Eastbound
+stack1D,0.22911694510739858,Interstate 40,Westbound
+stack1D,0.76,Interstate 88 (Illinois),Eastbound
+stack1D,0.07692307692307693,Interstate 88 (Illinois),Westbound
+stack1D,0.7916666666666666,Interstate 17,Southbound
+stack1D,0.5185185185185185,Interstate 17,Northbound
+stack1D,0.25,Interstate 96,Eastbound
+stack1D,0.375,Interstate 96,Westbound
+stack1D,0.13043478260869565,Interstate 27,Northbound
+stack1D,0.0,Interstate 105 (Oregon),Eastbound
+stack1D,0.0,Interstate 105 (Oregon),Westbound
+stack1D,0.26666666666666666,Interstate 335 (Kansas),Eastbound
+stack1D,0.0,Interstate 335 (Kansas),Westbound
+stack1D,0.11462450592885376,Interstate 15,Southbound
+stack1D,0.3231939163498099,Interstate 15,Northbound
+stack1D,0.4049586776859504,Interstate 5,Southbound
+stack1D,0.3247863247863248,Interstate 5,Northbound
+stack1D,0.11538461538461539,Interstate 78,Eastbound
+stack1D,0.08,Interstate 78,Westbound
+stack1D,0.25252525252525254,Interstate 44,Eastbound
+stack1D,0.29591836734693877,Interstate 44,Westbound
+stack1D,0.35555555555555557,Interstate 29,Southbound
+stack1D,0.3826086956521739,Interstate 29,Northbound
+stack1D,0.5342465753424658,Interstate 74,Eastbound
+stack1D,0.4142857142857143,Interstate 74,Westbound
+stack1D,0.09090909090909091,Interstate 495 (Massachusetts),Southbound
+stack1D,0.22727272727272727,Interstate 495 (Massachusetts),Northbound
+stack1D,0.3111111111111111,Interstate 64,Eastbound
+stack1D,0.21910112359550563,Interstate 64,Westbound
+stack1D,0.36363636363636365,Interstate 88 (New York),Eastbound
+stack1D,0.1991869918699187,Interstate 94,Eastbound
+stack1D,0.24705882352941178,Interstate 94,Westbound
+stack1D,0.23529411764705882,Interstate 49 (Lousiana-South Segment,Southbound
+stack1D,0.6764705882352942,Interstate 49 (Lousiana-South Segment,Northbound
+stack1D,0.038461538461538464,Interstate 49 (Missouri),Southbound
+stack1D,0.06451612903225806,Interstate 49 (Missouri),Northbound
+stack1D,0.515625,Interstate 69,Southbound
+stack1D,0.2903225806451613,Interstate 69,Northbound
+stack1D,0.17467248908296942,Interstate 75,Southbound
+stack1D,0.3588235294117647,Interstate 75,Northbound
+stack1D,0.24736842105263157,Interstate 35,Southbound
+stack1D,0.33505154639175255,Interstate 35,Northbound
+stack1D,0.16666666666666666,Interstate 93,Southbound
+stack1D,0.42857142857142855,Interstate 93,Northbound
+stack1D,0.3148148148148148,Interstate 87,Southbound
+stack1D,0.15625,Interstate 87,Northbound
+stack1D,0.7419354838709677,Interstate 71,Southbound
+stack1D,0.6935483870967742,Interstate 71,Northbound
+stack1D,0.2222222222222222,Interstate 84 (Pennsylvania-Massachusetts),Eastbound
+stack1D,0.23255813953488372,Interstate 84 (Pennsylvania-Massachusetts),Westbound
+stack1D,0.6140350877192983,Interstate 24,Eastbound
+stack1D,0.45614035087719296,Interstate 24,Westbound
+stack1D,0.5555555555555556,Interstate 16,Eastbound
+stack1D,0.25925925925925924,Interstate 16,Westbound
+stack1D,0.08571428571428572,Interstate 72,Eastbound
+stack1D,0.42857142857142855,Interstate 72,Westbound
+stack1D,0.11594202898550725,Interstate 79,Southbound
+stack1D,0.2898550724637681,Interstate 79,Northbound
+stack1D,0.37037037037037035,Interstate 41,Southbound
+stack1D,0.5483870967741935,Interstate 41,Northbound
+stack2D,0.22916666666666666,Interstate 55,Southbound
+stack2D,0.28368794326241137,Interstate 55,Northbound
+stack2D,0.1926829268292683,Interstate 90,Eastbound
+stack2D,0.22332506203473945,Interstate 90,Westbound
+stack2D,0.17647058823529413,Interstate 85,Eastbound
+stack2D,0.32786885245901637,Interstate 85,Westbound
+stack2D,0.11475409836065574,Interstate 57,Southbound
+stack2D,0.11475409836065574,Interstate 57,Northbound
+stack2D,0.16923076923076924,Interstate 26,Southbound
+stack2D,0.328125,Interstate 26,Northbound
+stack2D,0.2222222222222222,Interstate 82,Southbound
+stack2D,0.25925925925925924,Interstate 82,Northbound
+stack2D,0.13924050632911392,Interstate 76 (Ohio-New Jersey),Eastbound
+stack2D,0.2839506172839506,Interstate 76 (Ohio-New Jersey),Westbound
+stack2D,0.24528301886792453,Interstate 39,Southbound
+stack2D,0.2653061224489796,Interstate 39,Northbound
+stack2D,0.07142857142857142,Interstate 86 (Pennsylvania-New York),Eastbound
+stack2D,0.21428571428571427,Interstate 86 (Pennsylvania-New York),Westbound
+stack2D,0.3945578231292517,Interstate 84 (Oregon-Utah),Eastbound
+stack2D,0.3581081081081081,Interstate 84 (Oregon-Utah),Westbound
+stack2D,0.6,Interstate 76 (Colorado-Nebraska),Westbound
+stack2D,0.28,Interstate 476 (Pennsylvania),Southbound
+stack2D,0.24,Interstate 476 (Pennsylvania),Northbound
+stack2D,0.1111111111111111,Interstate 43,Southbound
+stack2D,0.22580645161290322,Interstate 43,Northbound
+stack2D,0.22413793103448276,Interstate 10,Eastbound
+stack2D,0.2100238663484487,Interstate 10,Westbound
+stack2D,0.25625,Interstate 81,Southbound
+stack2D,0.31645569620253167,Interstate 81,Northbound
+stack2D,0.4423076923076923,Interstate 8,Eastbound
+stack2D,0.27450980392156865,Interstate 8,Westbound
+stack2D,0.25,Interstate 95 (Southern Segment),Southbound
+stack2D,0.19523809523809524,Interstate 95 (Southern Segment),Northbound
+stack2D,0.1826086956521739,Interstate 95 (Northern Segment),Southbound
+stack2D,0.2627118644067797,Interstate 95 (Northern Segment),Northbound
+stack2D,0.10810810810810811,Interstate 89,Southbound
+stack2D,0.21621621621621623,Interstate 89,Northbound
+stack2D,0.09090909090909091,Interstate 68,Eastbound
+stack2D,0.5454545454545454,Interstate 68,Westbound
+stack2D,0.4864864864864865,Interstate 45,Southbound
+stack2D,0.3333333333333333,Interstate 45,Northbound
+stack2D,0.22807017543859648,Interstate 30,Eastbound
+stack2D,0.27450980392156865,Interstate 30,Westbound
+stack2D,0.3375796178343949,Interstate 65,Southbound
+stack2D,0.25,Interstate 65,Northbound
+stack2D,0.8571428571428571,Interstate 37,Northbound
+stack2D,0.2434017595307918,Interstate 70,Eastbound
+stack2D,0.13513513513513514,Interstate 70,Westbound
+stack2D,0.07272727272727272,Interstate 91,Southbound
+stack2D,0.2,Interstate 91,Northbound
+stack2D,0.22777777777777777,Interstate 25,Southbound
+stack2D,0.33519553072625696,Interstate 25,Northbound
+stack2D,0.31645569620253167,Interstate 59,Southbound
+stack2D,0.4375,Interstate 59,Northbound
+stack2D,0.27586206896551724,Interstate 77,Southbound
+stack2D,0.32456140350877194,Interstate 77,Northbound
+stack2D,0.3783783783783784,Interstate 22,Eastbound
+stack2D,0.2972972972972973,Interstate 22,Westbound
+stack2D,0.2900763358778626,Interstate 20,Eastbound
+stack2D,0.2567049808429119,Interstate 20,Westbound
+stack2D,0.19310344827586207,Interstate 80,Eastbound
+stack2D,0.1900647948164147,Interstate 80,Westbound
+stack2D,0.29603729603729606,Interstate 40,Eastbound
+stack2D,0.2171837708830549,Interstate 40,Westbound
+stack2D,0.48,Interstate 88 (Illinois),Eastbound
+stack2D,0.07692307692307693,Interstate 88 (Illinois),Westbound
+stack2D,0.5,Interstate 17,Southbound
+stack2D,0.14814814814814814,Interstate 17,Northbound
+stack2D,0.4375,Interstate 96,Eastbound
+stack2D,0.21875,Interstate 96,Westbound
+stack2D,0.043478260869565216,Interstate 27,Northbound
+stack2D,0.0,Interstate 105 (Oregon),Eastbound
+stack2D,0.0,Interstate 105 (Oregon),Westbound
+stack2D,0.5333333333333333,Interstate 335 (Kansas),Eastbound
+stack2D,0.14814814814814814,Interstate 335 (Kansas),Westbound
+stack2D,0.1976284584980237,Interstate 15,Southbound
+stack2D,0.19391634980988592,Interstate 15,Northbound
+stack2D,0.34297520661157027,Interstate 5,Southbound
+stack2D,0.18376068376068377,Interstate 5,Northbound
+stack2D,0.19230769230769232,Interstate 78,Eastbound
+stack2D,0.08,Interstate 78,Westbound
+stack2D,0.31313131313131315,Interstate 44,Eastbound
+stack2D,0.30612244897959184,Interstate 44,Westbound
+stack2D,0.4666666666666667,Interstate 29,Southbound
+stack2D,0.26956521739130435,Interstate 29,Northbound
+stack2D,0.4794520547945205,Interstate 74,Eastbound
+stack2D,0.37142857142857144,Interstate 74,Westbound
+stack2D,0.09090909090909091,Interstate 495 (Massachusetts),Southbound
+stack2D,0.22727272727272727,Interstate 495 (Massachusetts),Northbound
+stack2D,0.29444444444444445,Interstate 64,Eastbound
+stack2D,0.2640449438202247,Interstate 64,Westbound
+stack2D,0.13636363636363635,Interstate 88 (New York),Eastbound
+stack2D,0.17886178861788618,Interstate 94,Eastbound
+stack2D,0.23529411764705882,Interstate 94,Westbound
+stack2D,0.23529411764705882,Interstate 49 (Lousiana-South Segment,Southbound
+stack2D,0.5294117647058824,Interstate 49 (Lousiana-South Segment,Northbound
+stack2D,0.23076923076923078,Interstate 49 (Missouri),Southbound
+stack2D,0.0967741935483871,Interstate 49 (Missouri),Northbound
+stack2D,0.34375,Interstate 69,Southbound
+stack2D,0.3548387096774194,Interstate 69,Northbound
+stack2D,0.08733624454148471,Interstate 75,Southbound
+stack2D,0.24705882352941178,Interstate 75,Northbound
+stack2D,0.1736842105263158,Interstate 35,Southbound
+stack2D,0.15979381443298968,Interstate 35,Northbound
+stack2D,0.25,Interstate 93,Southbound
+stack2D,0.4,Interstate 93,Northbound
+stack2D,0.2222222222222222,Interstate 87,Southbound
+stack2D,0.09375,Interstate 87,Northbound
+stack2D,0.4032258064516129,Interstate 71,Southbound
+stack2D,0.43548387096774194,Interstate 71,Northbound
+stack2D,0.28888888888888886,Interstate 84 (Pennsylvania-Massachusetts),Eastbound
+stack2D,0.32558139534883723,Interstate 84 (Pennsylvania-Massachusetts),Westbound
+stack2D,0.5087719298245614,Interstate 24,Eastbound
+stack2D,0.3157894736842105,Interstate 24,Westbound
+stack2D,0.25925925925925924,Interstate 16,Eastbound
+stack2D,0.2962962962962963,Interstate 16,Westbound
+stack2D,0.42857142857142855,Interstate 72,Eastbound
+stack2D,0.4857142857142857,Interstate 72,Westbound
+stack2D,0.18840579710144928,Interstate 79,Southbound
+stack2D,0.21739130434782608,Interstate 79,Northbound
+stack2D,0.4074074074074074,Interstate 41,Southbound
+stack2D,0.3870967741935484,Interstate 41,Northbound
+stack3D,0.09027777777777778,Interstate 55,Southbound
+stack3D,0.14893617021276595,Interstate 55,Northbound
+stack3D,0.13902439024390245,Interstate 90,Eastbound
+stack3D,0.14392059553349876,Interstate 90,Westbound
+stack3D,0.1092436974789916,Interstate 85,Eastbound
+stack3D,0.20491803278688525,Interstate 85,Westbound
+stack3D,0.03278688524590164,Interstate 57,Southbound
+stack3D,0.09836065573770492,Interstate 57,Northbound
+stack3D,0.046153846153846156,Interstate 26,Southbound
+stack3D,0.171875,Interstate 26,Northbound
+stack3D,0.2222222222222222,Interstate 82,Southbound
+stack3D,0.18518518518518517,Interstate 82,Northbound
+stack3D,0.05063291139240506,Interstate 76 (Ohio-New Jersey),Eastbound
+stack3D,0.08641975308641975,Interstate 76 (Ohio-New Jersey),Westbound
+stack3D,0.11320754716981132,Interstate 39,Southbound
+stack3D,0.16326530612244897,Interstate 39,Northbound
+stack3D,0.047619047619047616,Interstate 86 (Pennsylvania-New York),Eastbound
+stack3D,0.11904761904761904,Interstate 86 (Pennsylvania-New York),Westbound
+stack3D,0.3401360544217687,Interstate 84 (Oregon-Utah),Eastbound
+stack3D,0.2702702702702703,Interstate 84 (Oregon-Utah),Westbound
+stack3D,0.32,Interstate 76 (Colorado-Nebraska),Westbound
+stack3D,0.2,Interstate 476 (Pennsylvania),Southbound
+stack3D,0.08,Interstate 476 (Pennsylvania),Northbound
+stack3D,0.027777777777777776,Interstate 43,Southbound
+stack3D,0.12903225806451613,Interstate 43,Northbound
+stack3D,0.16748768472906403,Interstate 10,Eastbound
+stack3D,0.162291169451074,Interstate 10,Westbound
+stack3D,0.15,Interstate 81,Southbound
+stack3D,0.24050632911392406,Interstate 81,Northbound
+stack3D,0.36538461538461536,Interstate 8,Eastbound
+stack3D,0.13725490196078433,Interstate 8,Westbound
+stack3D,0.1320754716981132,Interstate 95 (Southern Segment),Southbound
+stack3D,0.1380952380952381,Interstate 95 (Southern Segment),Northbound
+stack3D,0.17391304347826086,Interstate 95 (Northern Segment),Southbound
+stack3D,0.211864406779661,Interstate 95 (Northern Segment),Northbound
+stack3D,0.08108108108108109,Interstate 89,Southbound
+stack3D,0.24324324324324326,Interstate 89,Northbound
+stack3D,0.13636363636363635,Interstate 68,Eastbound
+stack3D,0.4090909090909091,Interstate 68,Westbound
+stack3D,0.1891891891891892,Interstate 45,Southbound
+stack3D,0.13333333333333333,Interstate 45,Northbound
+stack3D,0.12280701754385964,Interstate 30,Eastbound
+stack3D,0.11764705882352941,Interstate 30,Westbound
+stack3D,0.17197452229299362,Interstate 65,Southbound
+stack3D,0.11538461538461539,Interstate 65,Northbound
+stack3D,0.5,Interstate 37,Northbound
+stack3D,0.12023460410557185,Interstate 70,Eastbound
+stack3D,0.0990990990990991,Interstate 70,Westbound
+stack3D,0.16363636363636364,Interstate 91,Southbound
+stack3D,0.14545454545454545,Interstate 91,Northbound
+stack3D,0.2611111111111111,Interstate 25,Southbound
+stack3D,0.2905027932960894,Interstate 25,Northbound
+stack3D,0.10126582278481013,Interstate 59,Southbound
+stack3D,0.2375,Interstate 59,Northbound
+stack3D,0.16379310344827586,Interstate 77,Southbound
+stack3D,0.21052631578947367,Interstate 77,Northbound
+stack3D,0.08108108108108109,Interstate 22,Eastbound
+stack3D,0.1891891891891892,Interstate 22,Westbound
+stack3D,0.18702290076335878,Interstate 20,Eastbound
+stack3D,0.14559386973180077,Interstate 20,Westbound
+stack3D,0.12873563218390804,Interstate 80,Eastbound
+stack3D,0.13822894168466524,Interstate 80,Westbound
+stack3D,0.17249417249417248,Interstate 40,Eastbound
+stack3D,0.15274463007159905,Interstate 40,Westbound
+stack3D,0.04,Interstate 88 (Illinois),Eastbound
+stack3D,0.038461538461538464,Interstate 88 (Illinois),Westbound
+stack3D,0.375,Interstate 17,Southbound
+stack3D,0.1111111111111111,Interstate 17,Northbound
+stack3D,0.15625,Interstate 96,Eastbound
+stack3D,0.09375,Interstate 96,Westbound
+stack3D,0.043478260869565216,Interstate 27,Northbound
+stack3D,0.0,Interstate 105 (Oregon),Eastbound
+stack3D,0.0,Interstate 105 (Oregon),Westbound
+stack3D,0.23333333333333334,Interstate 335 (Kansas),Eastbound
+stack3D,0.18518518518518517,Interstate 335 (Kansas),Westbound
+stack3D,0.16600790513833993,Interstate 15,Southbound
+stack3D,0.13688212927756654,Interstate 15,Northbound
+stack3D,0.21074380165289255,Interstate 5,Southbound
+stack3D,0.13675213675213677,Interstate 5,Northbound
+stack3D,0.3076923076923077,Interstate 78,Eastbound
+stack3D,0.08,Interstate 78,Westbound
+stack3D,0.20202020202020202,Interstate 44,Eastbound
+stack3D,0.24489795918367346,Interstate 44,Westbound
+stack3D,0.3111111111111111,Interstate 29,Southbound
+stack3D,0.16521739130434782,Interstate 29,Northbound
+stack3D,0.2054794520547945,Interstate 74,Eastbound
+stack3D,0.14285714285714285,Interstate 74,Westbound
+stack3D,0.09090909090909091,Interstate 495 (Massachusetts),Southbound
+stack3D,0.2727272727272727,Interstate 495 (Massachusetts),Northbound
+stack3D,0.18888888888888888,Interstate 64,Eastbound
+stack3D,0.1797752808988764,Interstate 64,Westbound
+stack3D,0.0,Interstate 88 (New York),Eastbound
+stack3D,0.09349593495934959,Interstate 94,Eastbound
+stack3D,0.13725490196078433,Interstate 94,Westbound
+stack3D,0.2647058823529412,Interstate 49 (Lousiana-South Segment,Southbound
+stack3D,0.29411764705882354,Interstate 49 (Lousiana-South Segment,Northbound
+stack3D,0.15384615384615385,Interstate 49 (Missouri),Southbound
+stack3D,0.0967741935483871,Interstate 49 (Missouri),Northbound
+stack3D,0.109375,Interstate 69,Southbound
+stack3D,0.1774193548387097,Interstate 69,Northbound
+stack3D,0.056768558951965066,Interstate 75,Southbound
+stack3D,0.13529411764705881,Interstate 75,Northbound
+stack3D,0.07894736842105263,Interstate 35,Southbound
+stack3D,0.06701030927835051,Interstate 35,Northbound
+stack3D,0.2222222222222222,Interstate 93,Southbound
+stack3D,0.3142857142857143,Interstate 93,Northbound
+stack3D,0.09259259259259259,Interstate 87,Southbound
+stack3D,0.0625,Interstate 87,Northbound
+stack3D,0.20967741935483872,Interstate 71,Southbound
+stack3D,0.16129032258064516,Interstate 71,Northbound
+stack3D,0.24444444444444444,Interstate 84 (Pennsylvania-Massachusetts),Eastbound
+stack3D,0.32558139534883723,Interstate 84 (Pennsylvania-Massachusetts),Westbound
+stack3D,0.3333333333333333,Interstate 24,Eastbound
+stack3D,0.08771929824561403,Interstate 24,Westbound
+stack3D,0.18518518518518517,Interstate 16,Eastbound
+stack3D,0.14814814814814814,Interstate 16,Westbound
+stack3D,0.3142857142857143,Interstate 72,Eastbound
+stack3D,0.2571428571428571,Interstate 72,Westbound
+stack3D,0.15942028985507245,Interstate 79,Southbound
+stack3D,0.13043478260869565,Interstate 79,Northbound
+stack3D,0.14814814814814814,Interstate 41,Southbound
+stack3D,0.22580645161290322,Interstate 41,Northbound
+capac,0.125,Interstate 55,Southbound
+capac,0.1276595744680851,Interstate 55,Northbound
+capac,0.08048780487804878,Interstate 90,Eastbound
+capac,0.1687344913151365,Interstate 90,Westbound
+capac,0.0,Interstate 85,Eastbound
+capac,0.1557377049180328,Interstate 85,Westbound
+capac,0.0,Interstate 57,Southbound
+capac,0.2459016393442623,Interstate 57,Northbound
+capac,0.5076923076923077,Interstate 26,Southbound
+capac,0.0,Interstate 26,Northbound
+capac,0.0,Interstate 82,Southbound
+capac,0.18518518518518517,Interstate 82,Northbound
+capac,0.189873417721519,Interstate 76 (Ohio-New Jersey),Eastbound
+capac,0.012345679012345678,Interstate 76 (Ohio-New Jersey),Westbound
+capac,0.07547169811320754,Interstate 39,Southbound
+capac,0.32653061224489793,Interstate 39,Northbound
+capac,0.0,Interstate 86 (Pennsylvania-New York),Eastbound
+capac,0.0,Interstate 86 (Pennsylvania-New York),Westbound
+capac,0.006802721088435374,Interstate 84 (Oregon-Utah),Eastbound
+capac,0.14189189189189189,Interstate 84 (Oregon-Utah),Westbound
+capac,0.08,Interstate 76 (Colorado-Nebraska),Westbound
+capac,0.28,Interstate 476 (Pennsylvania),Southbound
+capac,0.36,Interstate 476 (Pennsylvania),Northbound
+capac,0.1388888888888889,Interstate 43,Southbound
+capac,0.5483870967741935,Interstate 43,Northbound
+capac,0.16009852216748768,Interstate 10,Eastbound
+capac,0.13365155131264916,Interstate 10,Westbound
+capac,0.00625,Interstate 81,Southbound
+capac,0.0759493670886076,Interstate 81,Northbound
+capac,0.057692307692307696,Interstate 8,Eastbound
+capac,0.39215686274509803,Interstate 8,Westbound
+capac,0.27358490566037735,Interstate 95 (Southern Segment),Southbound
+capac,0.04285714285714286,Interstate 95 (Southern Segment),Northbound
+capac,0.09565217391304348,Interstate 95 (Northern Segment),Southbound
+capac,0.2796610169491525,Interstate 95 (Northern Segment),Northbound
+capac,0.13513513513513514,Interstate 89,Southbound
+capac,0.2702702702702703,Interstate 89,Northbound
+capac,0.0,Interstate 68,Eastbound
+capac,0.0,Interstate 68,Westbound
+capac,0.6486486486486487,Interstate 45,Southbound
+capac,0.4666666666666667,Interstate 45,Northbound
+capac,0.07017543859649122,Interstate 30,Eastbound
+capac,0.4117647058823529,Interstate 30,Westbound
+capac,0.4267515923566879,Interstate 65,Southbound
+capac,0.16666666666666666,Interstate 65,Northbound
+capac,0.9285714285714286,Interstate 37,Northbound
+capac,0.03812316715542522,Interstate 70,Eastbound
+capac,0.02702702702702703,Interstate 70,Westbound
+capac,0.01818181818181818,Interstate 91,Southbound
+capac,0.32727272727272727,Interstate 91,Northbound
+capac,0.1388888888888889,Interstate 25,Southbound
+capac,0.2011173184357542,Interstate 25,Northbound
+capac,0.31645569620253167,Interstate 59,Southbound
+capac,0.0,Interstate 59,Northbound
+capac,0.3448275862068966,Interstate 77,Southbound
+capac,0.30701754385964913,Interstate 77,Northbound
+capac,0.13513513513513514,Interstate 22,Eastbound
+capac,0.24324324324324326,Interstate 22,Westbound
+capac,0.19083969465648856,Interstate 20,Eastbound
+capac,0.09578544061302682,Interstate 20,Westbound
+capac,0.034482758620689655,Interstate 80,Eastbound
+capac,0.047516198704103674,Interstate 80,Westbound
+capac,0.1445221445221445,Interstate 40,Eastbound
+capac,0.07637231503579953,Interstate 40,Westbound
+capac,0.56,Interstate 88 (Illinois),Eastbound
+capac,0.0,Interstate 88 (Illinois),Westbound
+capac,0.7916666666666666,Interstate 17,Southbound
+capac,0.48148148148148145,Interstate 17,Northbound
+capac,0.03125,Interstate 96,Eastbound
+capac,0.09375,Interstate 96,Westbound
+capac,0.13043478260869565,Interstate 27,Northbound
+capac,0.0,Interstate 105 (Oregon),Eastbound
+capac,0.0,Interstate 105 (Oregon),Westbound
+capac,0.0,Interstate 335 (Kansas),Eastbound
+capac,0.0,Interstate 335 (Kansas),Westbound
+capac,0.11067193675889328,Interstate 15,Southbound
+capac,0.4068441064638783,Interstate 15,Northbound
+capac,0.2892561983471074,Interstate 5,Southbound
+capac,0.358974358974359,Interstate 5,Northbound
+capac,0.11538461538461539,Interstate 78,Eastbound
+capac,0.0,Interstate 78,Westbound
+capac,0.0,Interstate 44,Eastbound
+capac,0.1326530612244898,Interstate 44,Westbound
+capac,0.1259259259259259,Interstate 29,Southbound
+capac,0.24347826086956523,Interstate 29,Northbound
+capac,0.5205479452054794,Interstate 74,Eastbound
+capac,0.3,Interstate 74,Westbound
+capac,0.045454545454545456,Interstate 495 (Massachusetts),Southbound
+capac,0.18181818181818182,Interstate 495 (Massachusetts),Northbound
+capac,0.22777777777777777,Interstate 64,Eastbound
+capac,0.06741573033707865,Interstate 64,Westbound
+capac,0.36363636363636365,Interstate 88 (New York),Eastbound
+capac,0.16666666666666666,Interstate 94,Eastbound
+capac,0.09411764705882353,Interstate 94,Westbound
+capac,0.14705882352941177,Interstate 49 (Lousiana-South Segment,Southbound
+capac,0.17647058823529413,Interstate 49 (Lousiana-South Segment,Northbound
+capac,0.0,Interstate 49 (Missouri),Southbound
+capac,0.0,Interstate 49 (Missouri),Northbound
+capac,0.296875,Interstate 69,Southbound
+capac,0.0967741935483871,Interstate 69,Northbound
+capac,0.14410480349344978,Interstate 75,Southbound
+capac,0.3176470588235294,Interstate 75,Northbound
+capac,0.11052631578947368,Interstate 35,Southbound
+capac,0.3865979381443299,Interstate 35,Northbound
+capac,0.19444444444444445,Interstate 93,Southbound
+capac,0.2857142857142857,Interstate 93,Northbound
+capac,0.3148148148148148,Interstate 87,Southbound
+capac,0.234375,Interstate 87,Northbound
+capac,0.5483870967741935,Interstate 71,Southbound
+capac,0.6129032258064516,Interstate 71,Northbound
+capac,0.022222222222222223,Interstate 84 (Pennsylvania-Massachusetts),Eastbound
+capac,0.0,Interstate 84 (Pennsylvania-Massachusetts),Westbound
+capac,0.5087719298245614,Interstate 24,Eastbound
+capac,0.43859649122807015,Interstate 24,Westbound
+capac,0.6296296296296297,Interstate 16,Eastbound
+capac,0.037037037037037035,Interstate 16,Westbound
+capac,0.0,Interstate 72,Eastbound
+capac,0.0,Interstate 72,Westbound
+capac,0.07246376811594203,Interstate 79,Southbound
+capac,0.37681159420289856,Interstate 79,Northbound
+capac,0.25925925925925924,Interstate 41,Southbound
+capac,0.4838709677419355,Interstate 41,Northbound
+middle,0.19444444444444445,Interstate 55,Southbound
+middle,0.14893617021276595,Interstate 55,Northbound
+middle,0.08780487804878048,Interstate 90,Eastbound
+middle,0.21339950372208435,Interstate 90,Westbound
+middle,0.01680672268907563,Interstate 85,Eastbound
+middle,0.21311475409836064,Interstate 85,Westbound
+middle,0.0,Interstate 57,Southbound
+middle,0.2459016393442623,Interstate 57,Northbound
+middle,0.4461538461538462,Interstate 26,Southbound
+middle,0.03125,Interstate 26,Northbound
+middle,0.037037037037037035,Interstate 82,Southbound
+middle,0.2222222222222222,Interstate 82,Northbound
+middle,0.189873417721519,Interstate 76 (Ohio-New Jersey),Eastbound
+middle,0.037037037037037035,Interstate 76 (Ohio-New Jersey),Westbound
+middle,0.11320754716981132,Interstate 39,Southbound
+middle,0.40816326530612246,Interstate 39,Northbound
+middle,0.0,Interstate 86 (Pennsylvania-New York),Eastbound
+middle,0.0,Interstate 86 (Pennsylvania-New York),Westbound
+middle,0.061224489795918366,Interstate 84 (Oregon-Utah),Eastbound
+middle,0.22297297297297297,Interstate 84 (Oregon-Utah),Westbound
+middle,0.32,Interstate 76 (Colorado-Nebraska),Westbound
+middle,0.28,Interstate 476 (Pennsylvania),Southbound
+middle,0.44,Interstate 476 (Pennsylvania),Northbound
+middle,0.1388888888888889,Interstate 43,Southbound
+middle,0.4838709677419355,Interstate 43,Northbound
+middle,0.1921182266009852,Interstate 10,Eastbound
+middle,0.15035799522673032,Interstate 10,Westbound
+middle,0.04375,Interstate 81,Southbound
+middle,0.14556962025316456,Interstate 81,Northbound
+middle,0.1346153846153846,Interstate 8,Eastbound
+middle,0.37254901960784315,Interstate 8,Westbound
+middle,0.30660377358490565,Interstate 95 (Southern Segment),Southbound
+middle,0.0380952380952381,Interstate 95 (Southern Segment),Northbound
+middle,0.09565217391304348,Interstate 95 (Northern Segment),Southbound
+middle,0.3305084745762712,Interstate 95 (Northern Segment),Northbound
+middle,0.10810810810810811,Interstate 89,Southbound
+middle,0.2972972972972973,Interstate 89,Northbound
+middle,0.0,Interstate 68,Eastbound
+middle,0.0,Interstate 68,Westbound
+middle,0.6486486486486487,Interstate 45,Southbound
+middle,0.4666666666666667,Interstate 45,Northbound
+middle,0.07017543859649122,Interstate 30,Eastbound
+middle,0.39215686274509803,Interstate 30,Westbound
+middle,0.45222929936305734,Interstate 65,Southbound
+middle,0.24358974358974358,Interstate 65,Northbound
+middle,0.9285714285714286,Interstate 37,Northbound
+middle,0.06451612903225806,Interstate 70,Eastbound
+middle,0.0990990990990991,Interstate 70,Westbound
+middle,0.01818181818181818,Interstate 91,Southbound
+middle,0.2727272727272727,Interstate 91,Northbound
+middle,0.12222222222222222,Interstate 25,Southbound
+middle,0.20670391061452514,Interstate 25,Northbound
+middle,0.3670886075949367,Interstate 59,Southbound
+middle,0.0375,Interstate 59,Northbound
+middle,0.3620689655172414,Interstate 77,Southbound
+middle,0.32456140350877194,Interstate 77,Northbound
+middle,0.2972972972972973,Interstate 22,Eastbound
+middle,0.24324324324324326,Interstate 22,Westbound
+middle,0.3282442748091603,Interstate 20,Eastbound
+middle,0.15708812260536398,Interstate 20,Westbound
+middle,0.04597701149425287,Interstate 80,Eastbound
+middle,0.07775377969762419,Interstate 80,Westbound
+middle,0.1655011655011655,Interstate 40,Eastbound
+middle,0.11933174224343675,Interstate 40,Westbound
+middle,0.76,Interstate 88 (Illinois),Eastbound
+middle,0.038461538461538464,Interstate 88 (Illinois),Westbound
+middle,0.7916666666666666,Interstate 17,Southbound
+middle,0.5925925925925926,Interstate 17,Northbound
+middle,0.03125,Interstate 96,Eastbound
+middle,0.15625,Interstate 96,Westbound
+middle,0.13043478260869565,Interstate 27,Northbound
+middle,0.0,Interstate 105 (Oregon),Eastbound
+middle,0.0,Interstate 105 (Oregon),Westbound
+middle,0.0,Interstate 335 (Kansas),Eastbound
+middle,0.0,Interstate 335 (Kansas),Westbound
+middle,0.1067193675889328,Interstate 15,Southbound
+middle,0.38022813688212925,Interstate 15,Northbound
+middle,0.32231404958677684,Interstate 5,Southbound
+middle,0.358974358974359,Interstate 5,Northbound
+middle,0.11538461538461539,Interstate 78,Eastbound
+middle,0.04,Interstate 78,Westbound
+middle,0.06060606060606061,Interstate 44,Eastbound
+middle,0.19387755102040816,Interstate 44,Westbound
+middle,0.18518518518518517,Interstate 29,Southbound
+middle,0.2782608695652174,Interstate 29,Northbound
+middle,0.547945205479452,Interstate 74,Eastbound
+middle,0.4,Interstate 74,Westbound
+middle,0.045454545454545456,Interstate 495 (Massachusetts),Southbound
+middle,0.22727272727272727,Interstate 495 (Massachusetts),Northbound
+middle,0.2777777777777778,Interstate 64,Eastbound
+middle,0.10674157303370786,Interstate 64,Westbound
+middle,0.36363636363636365,Interstate 88 (New York),Eastbound
+middle,0.16666666666666666,Interstate 94,Eastbound
+middle,0.12549019607843137,Interstate 94,Westbound
+middle,0.20588235294117646,Interstate 49 (Lousiana-South Segment,Southbound
+middle,0.3235294117647059,Interstate 49 (Lousiana-South Segment,Northbound
+middle,0.0,Interstate 49 (Missouri),Southbound
+middle,0.0,Interstate 49 (Missouri),Northbound
+middle,0.375,Interstate 69,Southbound
+middle,0.16129032258064516,Interstate 69,Northbound
+middle,0.1572052401746725,Interstate 75,Southbound
+middle,0.3352941176470588,Interstate 75,Northbound
+middle,0.1368421052631579,Interstate 35,Southbound
+middle,0.37628865979381443,Interstate 35,Northbound
+middle,0.19444444444444445,Interstate 93,Southbound
+middle,0.3142857142857143,Interstate 93,Northbound
+middle,0.3148148148148148,Interstate 87,Southbound
+middle,0.203125,Interstate 87,Northbound
+middle,0.7096774193548387,Interstate 71,Southbound
+middle,0.6612903225806451,Interstate 71,Northbound
+middle,0.022222222222222223,Interstate 84 (Pennsylvania-Massachusetts),Eastbound
+middle,0.046511627906976744,Interstate 84 (Pennsylvania-Massachusetts),Westbound
+middle,0.5614035087719298,Interstate 24,Eastbound
+middle,0.43859649122807015,Interstate 24,Westbound
+middle,0.6296296296296297,Interstate 16,Eastbound
+middle,0.07407407407407407,Interstate 16,Westbound
+middle,0.0,Interstate 72,Eastbound
+middle,0.02857142857142857,Interstate 72,Westbound
+middle,0.07246376811594203,Interstate 79,Southbound
+middle,0.34782608695652173,Interstate 79,Northbound
+middle,0.2962962962962963,Interstate 41,Southbound
+middle,0.5483870967741935,Interstate 41,Northbound
+max5H,0.0625,Interstate 55,Southbound
+max5H,0.1276595744680851,Interstate 55,Northbound
+max5H,0.2073170731707317,Interstate 90,Eastbound
+max5H,0.13399503722084366,Interstate 90,Westbound
+max5H,0.025210084033613446,Interstate 85,Eastbound
+max5H,0.2540983606557377,Interstate 85,Westbound
+max5H,0.18032786885245902,Interstate 57,Southbound
+max5H,0.2459016393442623,Interstate 57,Northbound
+max5H,0.5692307692307692,Interstate 26,Southbound
+max5H,0.0,Interstate 26,Northbound
+max5H,0.0,Interstate 82,Southbound
+max5H,0.14814814814814814,Interstate 82,Northbound
+max5H,0.189873417721519,Interstate 76 (Ohio-New Jersey),Eastbound
+max5H,0.012345679012345678,Interstate 76 (Ohio-New Jersey),Westbound
+max5H,0.0,Interstate 39,Southbound
+max5H,0.24489795918367346,Interstate 39,Northbound
+max5H,0.0,Interstate 86 (Pennsylvania-New York),Eastbound
+max5H,0.0,Interstate 86 (Pennsylvania-New York),Westbound
+max5H,0.14285714285714285,Interstate 84 (Oregon-Utah),Eastbound
+max5H,0.11486486486486487,Interstate 84 (Oregon-Utah),Westbound
+max5H,0.68,Interstate 76 (Colorado-Nebraska),Westbound
+max5H,0.24,Interstate 476 (Pennsylvania),Southbound
+max5H,0.12,Interstate 476 (Pennsylvania),Northbound
+max5H,0.1388888888888889,Interstate 43,Southbound
+max5H,0.5161290322580645,Interstate 43,Northbound
+max5H,0.13793103448275862,Interstate 10,Eastbound
+max5H,0.11455847255369929,Interstate 10,Westbound
+max5H,0.0,Interstate 81,Southbound
+max5H,0.056962025316455694,Interstate 81,Northbound
+max5H,0.038461538461538464,Interstate 8,Eastbound
+max5H,0.39215686274509803,Interstate 8,Westbound
+max5H,0.25943396226415094,Interstate 95 (Southern Segment),Southbound
+max5H,0.04285714285714286,Interstate 95 (Southern Segment),Northbound
+max5H,0.09565217391304348,Interstate 95 (Northern Segment),Southbound
+max5H,0.23728813559322035,Interstate 95 (Northern Segment),Northbound
+max5H,0.13513513513513514,Interstate 89,Southbound
+max5H,0.2702702702702703,Interstate 89,Northbound
+max5H,0.0,Interstate 68,Eastbound
+max5H,0.0,Interstate 68,Westbound
+max5H,0.6486486486486487,Interstate 45,Southbound
+max5H,0.4666666666666667,Interstate 45,Northbound
+max5H,0.07017543859649122,Interstate 30,Eastbound
+max5H,0.4117647058823529,Interstate 30,Westbound
+max5H,0.25477707006369427,Interstate 65,Southbound
+max5H,0.14743589743589744,Interstate 65,Northbound
+max5H,0.9285714285714286,Interstate 37,Northbound
+max5H,0.2903225806451613,Interstate 70,Eastbound
+max5H,0.08108108108108109,Interstate 70,Westbound
+max5H,0.0,Interstate 91,Southbound
+max5H,0.2545454545454545,Interstate 91,Northbound
+max5H,0.08888888888888889,Interstate 25,Southbound
+max5H,0.12290502793296089,Interstate 25,Northbound
+max5H,0.12658227848101267,Interstate 59,Southbound
+max5H,0.0,Interstate 59,Northbound
+max5H,0.15517241379310345,Interstate 77,Southbound
+max5H,0.16666666666666666,Interstate 77,Northbound
+max5H,0.0,Interstate 22,Eastbound
+max5H,0.21621621621621623,Interstate 22,Westbound
+max5H,0.03435114503816794,Interstate 20,Eastbound
+max5H,0.22988505747126436,Interstate 20,Westbound
+max5H,0.1471264367816092,Interstate 80,Eastbound
+max5H,0.04103671706263499,Interstate 80,Westbound
+max5H,0.20046620046620048,Interstate 40,Eastbound
+max5H,0.1360381861575179,Interstate 40,Westbound
+max5H,0.76,Interstate 88 (Illinois),Eastbound
+max5H,0.0,Interstate 88 (Illinois),Westbound
+max5H,0.7916666666666666,Interstate 17,Southbound
+max5H,0.07407407407407407,Interstate 17,Northbound
+max5H,0.1875,Interstate 96,Eastbound
+max5H,0.0,Interstate 96,Westbound
+max5H,0.13043478260869565,Interstate 27,Northbound
+max5H,0.0,Interstate 105 (Oregon),Eastbound
+max5H,0.0,Interstate 105 (Oregon),Westbound
+max5H,0.5,Interstate 335 (Kansas),Eastbound
+max5H,0.0,Interstate 335 (Kansas),Westbound
+max5H,0.13043478260869565,Interstate 15,Southbound
+max5H,0.3574144486692015,Interstate 15,Northbound
+max5H,0.4256198347107438,Interstate 5,Southbound
+max5H,0.19230769230769232,Interstate 5,Northbound
+max5H,0.11538461538461539,Interstate 78,Eastbound
+max5H,0.0,Interstate 78,Westbound
+max5H,0.25252525252525254,Interstate 44,Eastbound
+max5H,0.01020408163265306,Interstate 44,Westbound
+max5H,0.08148148148148149,Interstate 29,Southbound
+max5H,0.20869565217391303,Interstate 29,Northbound
+max5H,0.2328767123287671,Interstate 74,Eastbound
+max5H,0.18571428571428572,Interstate 74,Westbound
+max5H,0.0,Interstate 495 (Massachusetts),Southbound
+max5H,0.13636363636363635,Interstate 495 (Massachusetts),Northbound
+max5H,0.13333333333333333,Interstate 64,Eastbound
+max5H,0.06741573033707865,Interstate 64,Westbound
+max5H,0.0,Interstate 88 (New York),Eastbound
+max5H,0.15853658536585366,Interstate 94,Eastbound
+max5H,0.22745098039215686,Interstate 94,Westbound
+max5H,0.08823529411764706,Interstate 49 (Lousiana-South Segment,Southbound
+max5H,0.0,Interstate 49 (Lousiana-South Segment,Northbound
+max5H,0.0,Interstate 49 (Missouri),Southbound
+max5H,0.0,Interstate 49 (Missouri),Northbound
+max5H,0.28125,Interstate 69,Southbound
+max5H,0.0,Interstate 69,Northbound
+max5H,0.026200873362445413,Interstate 75,Southbound
+max5H,0.19411764705882353,Interstate 75,Northbound
+max5H,0.03684210526315789,Interstate 35,Southbound
+max5H,0.33505154639175255,Interstate 35,Northbound
+max5H,0.19444444444444445,Interstate 93,Southbound
+max5H,0.2,Interstate 93,Northbound
+max5H,0.3148148148148148,Interstate 87,Southbound
+max5H,0.28125,Interstate 87,Northbound
+max5H,0.2903225806451613,Interstate 71,Southbound
+max5H,0.5645161290322581,Interstate 71,Northbound
+max5H,0.0,Interstate 84 (Pennsylvania-Massachusetts),Eastbound
+max5H,0.0,Interstate 84 (Pennsylvania-Massachusetts),Westbound
+max5H,0.38596491228070173,Interstate 24,Eastbound
+max5H,0.40350877192982454,Interstate 24,Westbound
+max5H,0.6296296296296297,Interstate 16,Eastbound
+max5H,0.0,Interstate 16,Westbound
+max5H,0.0,Interstate 72,Eastbound
+max5H,0.0,Interstate 72,Westbound
+max5H,0.043478260869565216,Interstate 79,Southbound
+max5H,0.37681159420289856,Interstate 79,Northbound
+max5H,0.25925925925925924,Interstate 41,Southbound
+max5H,0.4838709677419355,Interstate 41,Northbound
+max1H,0.2708333333333333,Interstate 55,Southbound
+max1H,0.3900709219858156,Interstate 55,Northbound
+max1H,0.3024390243902439,Interstate 90,Eastbound
+max1H,0.34739454094292804,Interstate 90,Westbound
+max1H,0.4117647058823529,Interstate 85,Eastbound
+max1H,0.4180327868852459,Interstate 85,Westbound
+max1H,0.22950819672131148,Interstate 57,Southbound
+max1H,0.32786885245901637,Interstate 57,Northbound
+max1H,0.6461538461538462,Interstate 26,Southbound
+max1H,0.6875,Interstate 26,Northbound
+max1H,0.18518518518518517,Interstate 82,Southbound
+max1H,0.5185185185185185,Interstate 82,Northbound
+max1H,0.31645569620253167,Interstate 76 (Ohio-New Jersey),Eastbound
+max1H,0.38271604938271603,Interstate 76 (Ohio-New Jersey),Westbound
+max1H,0.4339622641509434,Interstate 39,Southbound
+max1H,0.40816326530612246,Interstate 39,Northbound
+max1H,0.3333333333333333,Interstate 86 (Pennsylvania-New York),Eastbound
+max1H,0.3333333333333333,Interstate 86 (Pennsylvania-New York),Westbound
+max1H,0.46258503401360546,Interstate 84 (Oregon-Utah),Eastbound
+max1H,0.42567567567567566,Interstate 84 (Oregon-Utah),Westbound
+max1H,0.6,Interstate 76 (Colorado-Nebraska),Westbound
+max1H,0.28,Interstate 476 (Pennsylvania),Southbound
+max1H,0.48,Interstate 476 (Pennsylvania),Northbound
+max1H,0.1388888888888889,Interstate 43,Southbound
+max1H,0.5483870967741935,Interstate 43,Northbound
+max1H,0.35960591133004927,Interstate 10,Eastbound
+max1H,0.2840095465393795,Interstate 10,Westbound
+max1H,0.33125,Interstate 81,Southbound
+max1H,0.17721518987341772,Interstate 81,Northbound
+max1H,0.3269230769230769,Interstate 8,Eastbound
+max1H,0.4117647058823529,Interstate 8,Westbound
+max1H,0.36792452830188677,Interstate 95 (Southern Segment),Southbound
+max1H,0.20952380952380953,Interstate 95 (Southern Segment),Northbound
+max1H,0.22608695652173913,Interstate 95 (Northern Segment),Southbound
+max1H,0.2542372881355932,Interstate 95 (Northern Segment),Northbound
+max1H,0.24324324324324326,Interstate 89,Southbound
+max1H,0.2972972972972973,Interstate 89,Northbound
+max1H,0.09090909090909091,Interstate 68,Eastbound
+max1H,0.4090909090909091,Interstate 68,Westbound
+max1H,0.40540540540540543,Interstate 45,Southbound
+max1H,0.36666666666666664,Interstate 45,Northbound
+max1H,0.40350877192982454,Interstate 30,Eastbound
+max1H,0.35294117647058826,Interstate 30,Westbound
+max1H,0.4140127388535032,Interstate 65,Southbound
+max1H,0.36538461538461536,Interstate 65,Northbound
+max1H,0.6785714285714286,Interstate 37,Northbound
+max1H,0.3284457478005865,Interstate 70,Eastbound
+max1H,0.2972972972972973,Interstate 70,Westbound
+max1H,0.21818181818181817,Interstate 91,Southbound
+max1H,0.2727272727272727,Interstate 91,Northbound
+max1H,0.4222222222222222,Interstate 25,Southbound
+max1H,0.29608938547486036,Interstate 25,Northbound
+max1H,0.43037974683544306,Interstate 59,Southbound
+max1H,0.65,Interstate 59,Northbound
+max1H,0.3793103448275862,Interstate 77,Southbound
+max1H,0.45614035087719296,Interstate 77,Northbound
+max1H,0.7567567567567568,Interstate 22,Eastbound
+max1H,0.5405405405405406,Interstate 22,Westbound
+max1H,0.5038167938931297,Interstate 20,Eastbound
+max1H,0.36398467432950193,Interstate 20,Westbound
+max1H,0.31494252873563217,Interstate 80,Eastbound
+max1H,0.3412526997840173,Interstate 80,Westbound
+max1H,0.3986013986013986,Interstate 40,Eastbound
+max1H,0.33890214797136037,Interstate 40,Westbound
+max1H,0.68,Interstate 88 (Illinois),Eastbound
+max1H,0.19230769230769232,Interstate 88 (Illinois),Westbound
+max1H,0.5833333333333334,Interstate 17,Southbound
+max1H,0.7037037037037037,Interstate 17,Northbound
+max1H,0.75,Interstate 96,Eastbound
+max1H,0.5625,Interstate 96,Westbound
+max1H,0.0,Interstate 27,Northbound
+max1H,0.0,Interstate 105 (Oregon),Eastbound
+max1H,0.0,Interstate 105 (Oregon),Westbound
+max1H,0.6666666666666666,Interstate 335 (Kansas),Eastbound
+max1H,0.2962962962962963,Interstate 335 (Kansas),Westbound
+max1H,0.2766798418972332,Interstate 15,Southbound
+max1H,0.2737642585551331,Interstate 15,Northbound
+max1H,0.44214876033057854,Interstate 5,Southbound
+max1H,0.2948717948717949,Interstate 5,Northbound
+max1H,0.2692307692307692,Interstate 78,Eastbound
+max1H,0.32,Interstate 78,Westbound
+max1H,0.5454545454545454,Interstate 44,Eastbound
+max1H,0.45918367346938777,Interstate 44,Westbound
+max1H,0.42962962962962964,Interstate 29,Southbound
+max1H,0.43478260869565216,Interstate 29,Northbound
+max1H,0.7534246575342466,Interstate 74,Eastbound
+max1H,0.32857142857142857,Interstate 74,Westbound
+max1H,0.0,Interstate 495 (Massachusetts),Southbound
+max1H,0.13636363636363635,Interstate 495 (Massachusetts),Northbound
+max1H,0.4777777777777778,Interstate 64,Eastbound
+max1H,0.3539325842696629,Interstate 64,Westbound
+max1H,0.8181818181818182,Interstate 88 (New York),Eastbound
+max1H,0.27235772357723576,Interstate 94,Eastbound
+max1H,0.2784313725490196,Interstate 94,Westbound
+max1H,0.29411764705882354,Interstate 49 (Lousiana-South Segment,Southbound
+max1H,0.7058823529411765,Interstate 49 (Lousiana-South Segment,Northbound
+max1H,0.46153846153846156,Interstate 49 (Missouri),Southbound
+max1H,0.1935483870967742,Interstate 49 (Missouri),Northbound
+max1H,0.578125,Interstate 69,Southbound
+max1H,0.5645161290322581,Interstate 69,Northbound
+max1H,0.27074235807860264,Interstate 75,Southbound
+max1H,0.38235294117647056,Interstate 75,Northbound
+max1H,0.21052631578947367,Interstate 35,Southbound
+max1H,0.25257731958762886,Interstate 35,Northbound
+max1H,0.19444444444444445,Interstate 93,Southbound
+max1H,0.2,Interstate 93,Northbound
+max1H,0.4444444444444444,Interstate 87,Southbound
+max1H,0.25,Interstate 87,Northbound
+max1H,0.7580645161290323,Interstate 71,Southbound
+max1H,0.7419354838709677,Interstate 71,Northbound
+max1H,0.0,Interstate 84 (Pennsylvania-Massachusetts),Eastbound
+max1H,0.3953488372093023,Interstate 84 (Pennsylvania-Massachusetts),Westbound
+max1H,0.6842105263157895,Interstate 24,Eastbound
+max1H,0.3508771929824561,Interstate 24,Westbound
+max1H,0.2962962962962963,Interstate 16,Eastbound
+max1H,0.48148148148148145,Interstate 16,Westbound
+max1H,0.6571428571428571,Interstate 72,Eastbound
+max1H,0.4857142857142857,Interstate 72,Westbound
+max1H,0.36231884057971014,Interstate 79,Southbound
+max1H,0.34782608695652173,Interstate 79,Northbound
+max1H,0.7777777777777778,Interstate 41,Southbound
+max1H,0.4838709677419355,Interstate 41,Northbound
+max50,0.3055555555555556,Interstate 55,Southbound
+max50,0.41134751773049644,Interstate 55,Northbound
+max50,0.2097560975609756,Interstate 90,Eastbound
+max50,0.24317617866004962,Interstate 90,Westbound
+max50,0.3697478991596639,Interstate 85,Eastbound
+max50,0.39344262295081966,Interstate 85,Westbound
+max50,0.32786885245901637,Interstate 57,Southbound
+max50,0.4262295081967213,Interstate 57,Northbound
+max50,0.3384615384615385,Interstate 26,Southbound
+max50,0.4375,Interstate 26,Northbound
+max50,0.2222222222222222,Interstate 82,Southbound
+max50,0.4074074074074074,Interstate 82,Northbound
+max50,0.22784810126582278,Interstate 76 (Ohio-New Jersey),Eastbound
+max50,0.24691358024691357,Interstate 76 (Ohio-New Jersey),Westbound
+max50,0.33962264150943394,Interstate 39,Southbound
+max50,0.3877551020408163,Interstate 39,Northbound
+max50,0.23809523809523808,Interstate 86 (Pennsylvania-New York),Eastbound
+max50,0.2857142857142857,Interstate 86 (Pennsylvania-New York),Westbound
+max50,0.43537414965986393,Interstate 84 (Oregon-Utah),Eastbound
+max50,0.39864864864864863,Interstate 84 (Oregon-Utah),Westbound
+max50,0.4,Interstate 76 (Colorado-Nebraska),Westbound
+max50,0.44,Interstate 476 (Pennsylvania),Southbound
+max50,0.44,Interstate 476 (Pennsylvania),Northbound
+max50,0.1388888888888889,Interstate 43,Southbound
+max50,0.5161290322580645,Interstate 43,Northbound
+max50,0.28078817733990147,Interstate 10,Eastbound
+max50,0.23389021479713604,Interstate 10,Westbound
+max50,0.3375,Interstate 81,Southbound
+max50,0.2974683544303797,Interstate 81,Northbound
+max50,0.34615384615384615,Interstate 8,Eastbound
+max50,0.29411764705882354,Interstate 8,Westbound
+max50,0.32547169811320753,Interstate 95 (Southern Segment),Southbound
+max50,0.26666666666666666,Interstate 95 (Southern Segment),Northbound
+max50,0.28695652173913044,Interstate 95 (Northern Segment),Southbound
+max50,0.4067796610169492,Interstate 95 (Northern Segment),Northbound
+max50,0.32432432432432434,Interstate 89,Southbound
+max50,0.4864864864864865,Interstate 89,Northbound
+max50,0.45454545454545453,Interstate 68,Eastbound
+max50,0.6818181818181818,Interstate 68,Westbound
+max50,0.24324324324324326,Interstate 45,Southbound
+max50,0.36666666666666664,Interstate 45,Northbound
+max50,0.3508771929824561,Interstate 30,Eastbound
+max50,0.3137254901960784,Interstate 30,Westbound
+max50,0.25477707006369427,Interstate 65,Southbound
+max50,0.1794871794871795,Interstate 65,Northbound
+max50,0.32142857142857145,Interstate 37,Northbound
+max50,0.24633431085043989,Interstate 70,Eastbound
+max50,0.25225225225225223,Interstate 70,Westbound
+max50,0.2545454545454545,Interstate 91,Southbound
+max50,0.2909090909090909,Interstate 91,Northbound
+max50,0.39444444444444443,Interstate 25,Southbound
+max50,0.4245810055865922,Interstate 25,Northbound
+max50,0.4177215189873418,Interstate 59,Southbound
+max50,0.55,Interstate 59,Northbound
+max50,0.4051724137931034,Interstate 77,Southbound
+max50,0.38596491228070173,Interstate 77,Northbound
+max50,0.43243243243243246,Interstate 22,Eastbound
+max50,0.5405405405405406,Interstate 22,Westbound
+max50,0.38549618320610685,Interstate 20,Eastbound
+max50,0.2681992337164751,Interstate 20,Westbound
+max50,0.2413793103448276,Interstate 80,Eastbound
+max50,0.22462203023758098,Interstate 80,Westbound
+max50,0.2191142191142191,Interstate 40,Eastbound
+max50,0.19809069212410502,Interstate 40,Westbound
+max50,0.48,Interstate 88 (Illinois),Eastbound
+max50,0.23076923076923078,Interstate 88 (Illinois),Westbound
+max50,0.20833333333333334,Interstate 17,Southbound
+max50,0.3333333333333333,Interstate 17,Northbound
+max50,0.59375,Interstate 96,Eastbound
+max50,0.5,Interstate 96,Westbound
+max50,0.0,Interstate 27,Northbound
+max50,0.0,Interstate 105 (Oregon),Eastbound
+max50,0.0,Interstate 105 (Oregon),Westbound
+max50,0.3333333333333333,Interstate 335 (Kansas),Eastbound
+max50,0.4074074074074074,Interstate 335 (Kansas),Westbound
+max50,0.26877470355731226,Interstate 15,Southbound
+max50,0.22813688212927757,Interstate 15,Northbound
+max50,0.30165289256198347,Interstate 5,Southbound
+max50,0.27350427350427353,Interstate 5,Northbound
+max50,0.38461538461538464,Interstate 78,Eastbound
+max50,0.24,Interstate 78,Westbound
+max50,0.3333333333333333,Interstate 44,Eastbound
+max50,0.2857142857142857,Interstate 44,Westbound
+max50,0.4148148148148148,Interstate 29,Southbound
+max50,0.3391304347826087,Interstate 29,Northbound
+max50,0.6164383561643836,Interstate 74,Eastbound
+max50,0.3142857142857143,Interstate 74,Westbound
+max50,0.0,Interstate 495 (Massachusetts),Southbound
+max50,0.18181818181818182,Interstate 495 (Massachusetts),Northbound
+max50,0.4166666666666667,Interstate 64,Eastbound
+max50,0.38764044943820225,Interstate 64,Westbound
+max50,0.3181818181818182,Interstate 88 (New York),Eastbound
+max50,0.23577235772357724,Interstate 94,Eastbound
+max50,0.23137254901960785,Interstate 94,Westbound
+max50,0.38235294117647056,Interstate 49 (Lousiana-South Segment,Southbound
+max50,0.47058823529411764,Interstate 49 (Lousiana-South Segment,Northbound
+max50,0.3076923076923077,Interstate 49 (Missouri),Southbound
+max50,0.1935483870967742,Interstate 49 (Missouri),Northbound
+max50,0.34375,Interstate 69,Southbound
+max50,0.45161290322580644,Interstate 69,Northbound
+max50,0.17467248908296942,Interstate 75,Southbound
+max50,0.29411764705882354,Interstate 75,Northbound
+max50,0.2,Interstate 35,Southbound
+max50,0.14948453608247422,Interstate 35,Northbound
+max50,0.4444444444444444,Interstate 93,Southbound
+max50,0.34285714285714286,Interstate 93,Northbound
+max50,0.3148148148148148,Interstate 87,Southbound
+max50,0.125,Interstate 87,Northbound
+max50,0.3870967741935484,Interstate 71,Southbound
+max50,0.4032258064516129,Interstate 71,Northbound
+max50,0.13333333333333333,Interstate 84 (Pennsylvania-Massachusetts),Eastbound
+max50,0.46511627906976744,Interstate 84 (Pennsylvania-Massachusetts),Westbound
+max50,0.47368421052631576,Interstate 24,Eastbound
+max50,0.2631578947368421,Interstate 24,Westbound
+max50,0.25925925925925924,Interstate 16,Eastbound
+max50,0.2962962962962963,Interstate 16,Westbound
+max50,0.6285714285714286,Interstate 72,Eastbound
+max50,0.6285714285714286,Interstate 72,Westbound
+max50,0.2608695652173913,Interstate 79,Southbound
+max50,0.3333333333333333,Interstate 79,Northbound
+max50,0.48148148148148145,Interstate 41,Southbound
+max50,0.5806451612903226,Interstate 41,Northbound
