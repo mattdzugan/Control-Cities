@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+  <p>Edge Name: <span id="edgeName"></span></p>
+  <p>Dest Lat:  <span id="destLat"></span></p>
+</body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var width = 960,
+    height = 500,
+    speed = 0.3;
+
+
+var xs = d3.scaleLinear()
+    .domain([-130, -60])
+    .range([0, width]);
+var ys = d3.scaleLinear()
+    .domain([20, 60])
+    .range([height, 0]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+
+// Inputs
+nodes = [     {'x':-117.147523, 'y': 32.713364, 'name': 'San Diego',    'ind': '0'},
+              {'x':-118.214194, 'y': 34.055253, 'name': 'Los Angeles',  'ind': '1'},
+              {'x':-122.405445, 'y': 37.769633, 'name': 'San Francisco','ind': '2'},
+              {'x':-121.517006, 'y': 38.624906, 'name': 'Sacramento',   'ind': '3'},
+              {'x':-122.320158, 'y': 47.594245, 'name': 'Seattle',      'ind': '4'},
+              {'x':-106.730233, 'y': 32.260806, 'name': 'Las Cruces',   'ind': '5'},
+              {'x':-106.628958, 'y': 35.105298, 'name': 'Albuquerque',  'ind': '6'},
+              {'x':-104.851108, 'y': 41.113133, 'name': 'Cheyenne',     'ind': '7'},
+              {'x':-106.689959, 'y': 44.373141, 'name': 'Buffalo',      'ind': '8'},
+              {'x':-90.438027,  'y': 30.087304, 'name': 'New Orleans',  'ind': '9'},
+              {'x':-90.149866,  'y': 35.155328, 'name': 'Memphis',      'ind': '10'},
+              {'x':-88.196753,  'y': 41.486098, 'name': 'Illinois',     'ind': '11'},
+              {'x':-87.641616,  'y': 41.847058, 'name': 'Chicago',      'ind': '12'},
+              {'x':-80.209319,  'y': 25.750145, 'name': 'Miami',        'ind': '13'},
+              {'x':-81.657962,  'y': 30.314470, 'name': 'Jacksonville', 'ind': '14'},
+              {'x':-78.517799,  'y': 35.389918, 'name': 'Raleigh',      'ind': '15'},
+              {'x':-74.011409,  'y': 40.864572, 'name': 'New York',     'ind': '16'},
+              {'x':-71.262004,  'y': 42.340561, 'name': 'Boston',       'ind': '17'} ];
+
+nodes = [     {'x':-120, 'y': 50, 'name': 'A', 'ind': '0'},
+              {'x':-115, 'y': 35, 'name': 'B', 'ind': '1'},
+              {'x':-90,  'y': 40, 'name': 'C', 'ind': '2'},
+              {'x':-80,  'y': 45, 'name': 'D', 'ind': '3'},
+              {'x':-75,  'y': 30, 'name': 'E', 'ind': '4'},
+              {'x':-70,  'y': 50, 'name': 'F', 'ind': '5'},
+              {'x':-120, 'y': 40, 'name': 'G', 'ind': '6'},
+              {'x':-70,  'y': 25, 'name': 'H', 'ind': '7'} ];
+
+edges = [     {'id':1,   'name':'5',  'srce':1,  'dest':0},
+              {'id':2,   'name':'5',  'srce':3,  'dest':1},
+              {'id':3,   'name':'5',  'srce':4,  'dest':3},
+              {'id':4,   'name':'25', 'srce':6,  'dest':5},
+              {'id':5,   'name':'25', 'srce':7,  'dest':6},
+              {'id':6,   'name':'25', 'srce':8,  'dest':7},
+              {'id':7,   'name':'55', 'srce':10, 'dest':9},
+              {'id':8,   'name':'55', 'srce':11, 'dest':10},
+              {'id':9,   'name':'55', 'srce':12, 'dest':11},
+              {'id':10,  'name':'95', 'srce':14, 'dest':13},
+              {'id':11,  'name':'95', 'srce':15, 'dest':14},
+              {'id':12,  'name':'95', 'srce':16, 'dest':15},
+              {'id':13,  'name':'95', 'srce':17, 'dest':16},
+              {'id':14,  'name':'10', 'srce':1,  'dest':5},
+              {'id':15,  'name':'10', 'srce':5,  'dest':9},
+              {'id':16,  'name':'10', 'srce':9,  'dest':14},
+              {'id':17,  'name':'40', 'srce':6,  'dest':10},
+              {'id':18,  'name':'40', 'srce':10, 'dest':15},
+              {'id':19,  'name':'80', 'srce':2,  'dest':3},
+              {'id':20,  'name':'80', 'srce':3,  'dest':7},
+              {'id':21,  'name':'80', 'srce':7,  'dest':11},
+              {'id':22,  'name':'80', 'srce':11, 'dest':16},
+              {'id':23,  'name':'90', 'srce':4,  'dest':8},
+              {'id':24,  'name':'90', 'srce':8,  'dest':12},
+              {'id':25,  'name':'90', 'srce':12, 'dest':17},
+
+              {'id':101, 'name':'5',  'srce':0,  'dest':1},
+              {'id':102, 'name':'5',  'srce':1,  'dest':3},
+              {'id':103, 'name':'5',  'srce':3,  'dest':4},
+              {'id':104, 'name':'25', 'srce':5,  'dest':6},
+              {'id':105, 'name':'25', 'srce':6,  'dest':7},
+              {'id':106, 'name':'25', 'srce':7,  'dest':8},
+              {'id':107, 'name':'55', 'srce':9,  'dest':10},
+              {'id':108, 'name':'55', 'srce':10, 'dest':11},
+              {'id':109, 'name':'55', 'srce':11, 'dest':12},
+              {'id':110, 'name':'95', 'srce':13, 'dest':14},
+              {'id':111, 'name':'95', 'srce':14, 'dest':15},
+              {'id':112, 'name':'95', 'srce':15, 'dest':16},
+              {'id':113, 'name':'95', 'srce':16, 'dest':17},
+              {'id':114, 'name':'10', 'srce':5,  'dest':1},
+              {'id':115, 'name':'10', 'srce':9,  'dest':5},
+              {'id':116, 'name':'10', 'srce':14, 'dest':9},
+              {'id':117, 'name':'40', 'srce':10, 'dest':6},
+              {'id':118, 'name':'40', 'srce':15, 'dest':10},
+              {'id':119, 'name':'80', 'srce':3,  'dest':2},
+              {'id':120, 'name':'80', 'srce':7,  'dest':3},
+              {'id':121, 'name':'80', 'srce':11, 'dest':7},
+              {'id':122, 'name':'80', 'srce':16, 'dest':11},
+              {'id':123, 'name':'90', 'srce':8,  'dest':4},
+              {'id':124, 'name':'90', 'srce':12, 'dest':8},
+              {'id':125, 'name':'90', 'srce':17, 'dest':12}
+
+        ];
+//  needs "length" and "route" added ("srce" can be removed)
+
+
+
+
+edges = [     {'id':1,   'name':'one',   'length':200,  'dest':6, 'route':[{'x':-120, 'y':50, 'L':0},{'x':-120, 'y':40, 'L':200}] },
+              {'id':2,   'name':'two',   'length':500,  'dest':2, 'route':[{'x':-120, 'y':50, 'L':0},{'x':-100, 'y':45, 'L':300},{'x':-90,  'y':40, 'L':200}] },
+              {'id':3,   'name':'three', 'length':100,  'dest':1, 'route':[{'x':-120, 'y':40, 'L':0},{'x':-115, 'y':35, 'L':100}] },
+              {'id':4,   'name':'four',  'length':550,  'dest':2, 'route':[{'x':-115, 'y':35, 'L':0},{'x':-90,  'y':40, 'L':550}] },
+              {'id':5,   'name':'five',  'length':900,  'dest':4, 'route':[{'x':-115, 'y':35, 'L':0},{'x':-75,  'y':30, 'L':900}] },
+              {'id':6,   'name':'six',   'length':400,  'dest':4, 'route':[{'x':-90,  'y':40, 'L':0},{'x':-75,  'y':30, 'L':400}] },
+              {'id':7,   'name':'seven', 'length':250,  'dest':3, 'route':[{'x':-90,  'y':40, 'L':0},{'x':-80,  'y':45, 'L':250}] },
+              {'id':8,   'name':'eight', 'length':400,  'dest':4, 'route':[{'x':-80,  'y':45, 'L':0},{'x':-75,  'y':30, 'L':400}] },
+              {'id':9,   'name':'nine',  'length':200,  'dest':5, 'route':[{'x':-80,  'y':45, 'L':0},{'x':-70,  'y':50, 'L':200}] },
+              {'id':10,  'name':'ten',   'length':400,  'dest':4, 'route':[{'x':-70,  'y':50, 'L':0},{'x':-75,  'y':30, 'L':400}] },
+              {'id':11,  'name':'elevn', 'length':100,  'dest':7, 'route':[{'x':-75,  'y':30, 'L':0},{'x':-70,  'y':25, 'L':100}] },
+
+              {'id':101, 'name':'one',   'length':200,  'dest':0, 'route':[{'x':-120, 'y':40, 'L':0},{'x':-120, 'y':50, 'L':200}] },
+              {'id':102, 'name':'two',   'length':500,  'dest':0, 'route':[{'x':-90,  'y':40, 'L':0},{'x':-100, 'y':45, 'L':200},{'x':-120, 'y':50, 'L':300}] },
+              {'id':103, 'name':'three', 'length':100,  'dest':6, 'route':[{'x':-115, 'y':35, 'L':0},{'x':-120, 'y':40, 'L':100}] },
+              {'id':104, 'name':'four',  'length':550,  'dest':1, 'route':[{'x':-90,  'y':40, 'L':0},{'x':-115, 'y':35, 'L':550}] },
+              {'id':105, 'name':'five',  'length':900,  'dest':1, 'route':[{'x':-75,  'y':30, 'L':0},{'x':-115, 'y':35, 'L':900}] },
+              {'id':106, 'name':'six',   'length':400,  'dest':2, 'route':[{'x':-75,  'y':30, 'L':0},{'x':-90,  'y':40, 'L':400}] },
+              {'id':107, 'name':'seven', 'length':250,  'dest':2, 'route':[{'x':-80,  'y':45, 'L':0},{'x':-90,  'y':40, 'L':250}] },
+              {'id':108, 'name':'eight', 'length':400,  'dest':3, 'route':[{'x':-75,  'y':30, 'L':0},{'x':-80,  'y':45, 'L':400}] },
+              {'id':109, 'name':'nine',  'length':200,  'dest':3, 'route':[{'x':-70,  'y':50, 'L':0},{'x':-80,  'y':45, 'L':200}] },
+              {'id':110, 'name':'ten',   'length':400,  'dest':5, 'route':[{'x':-75,  'y':30, 'L':0},{'x':-70,  'y':50, 'L':400}] },
+              {'id':111, 'name':'elevn', 'length':100,  'dest':4, 'route':[{'x':-70,  'y':25, 'L':0},{'x':-75,  'y':30, 'L':100}] }
+            ];
+routesDJ = [      [ [],             [1,3],          [2],        [2,7],      [2,6],  [2,7,9],    [1],            [2,6,11]  ],
+                  [ [103,101],      [],             [4],        [4,7],      [5],    [4,7,9],    [103],          [5,11]    ],
+                  [ [102],          [104],          [],         [7],        [6],    [7,9],      [104,103],      [6,11]    ],
+                  [ [107,102],      [107,104],      [107],      [],         [8],    [9],        [107,104,103],  [8,11]    ],
+                  [ [106,102],      [105],          [106],      [108],      [],     [110],      [105,103],      [11]      ],
+                  [ [109,107,102],  [109,107,104],  [109,107],  [109],      [10],   [],         [10,105,103],   [10,11]   ],
+                  [ [101],          [3],            [3,4],      [3,4,7],    [3,5],  [3,5,110],  [],             [3,5,11]  ],
+                  [ [111,106,102],  [111,105],      [111,106],  [111,108],  [111],  [111,110],  [111,105,103],  []        ]
+                ];
+
+
+var lineFunction = d3.line()
+          .x(function(d) { return xs(d.x); })
+          .y(function(d) { return ys(d.y); });
+svgedges = svg.selectAll(".edges")
+          .data(edges)
+          .enter()
+          .append("path")
+          .attr("d", function(d){return lineFunction(d.route);})
+          .attr("stroke","gray")
+          .attr("fill","none")
+          .attr("class","edges");
+svgedgetext = svg.selectAll(".edgetext")
+          .data(edges.slice(0,11))
+          .enter()
+          .append("text")
+          .attr("x",function(d){return -5+xs(0.5*d.route[0].x+0.5*d.route[d.route.length-1].x);})
+          .attr("y",function(d){return -8+ys(0.5*d.route[0].y+0.5*d.route[d.route.length-1].y);})
+          .attr("class","edgetext")
+          .attr("fill","blue")
+          .text(function(d){return d.id;});
+
+svgnodes = svg.selectAll(".nodes")
+          .data(nodes)
+          .enter()
+          .append("circle")
+          .attr("cx",function(d){return xs(d.x);})
+          .attr("cy",function(d){return ys(d.y);})
+          .attr("class","nodes")
+          .attr("r",4);
+svgnodetext = svg.selectAll(".nodetext")
+          .data(nodes)
+          .enter()
+          .append("text")
+          .attr("x",function(d){return -5+xs(d.x);})
+          .attr("y",function(d){return -8+ys(d.y);})
+          .attr("class","nodetext")
+          .attr("fill","gray")
+          .text(function(d){return d.ind;});
+
+svgmarker = svg
+          .append("circle")
+          .attr("from",Math.floor(8*Math.random()));
+svgmarker .attr("cx",function(){return xs(nodes[svgmarker.attr("from")].x);})
+          .attr("cy",function(){return ys(nodes[svgmarker.attr("from")].y);})
+          .attr("class","marker")
+          .attr("fill","none")
+          .attr("stroke","#009BDF")
+          .attr("stroke-width",4)
+          .attr("r",8);
+
+
+
+
+
+// Dynamic Stuff
+svgmarker.transition()
+          .on("start", visit);
+
+
+function visit(){
+  var myFrom = Number(svgmarker.attr("from"))
+  var myTo = myFrom;
+  while (myTo==myFrom){
+    myTo = Math.floor(8*Math.random());
+  }
+  svgmarker.attr("to",myTo);
+  console.log("from:"+myFrom+",   to:"+myTo);
+  var myRouteList = routesDJ[myFrom][myTo];
+  //svgmarker.transition()
+  //      .on("end", function(){takeRoute(myRouteList);});
+  takeRoute(myRouteList);
+}
+
+
+function takeRoute(routeList){
+  console.log(routeList[0]);
+  if (routeList.length>1){
+    var N = routeList[0];
+    var routeIndex = edges.findIndex(x => x.id==N);
+    d3.select("#edgeName").html(edges[routeIndex].name);
+    svgmarker.attr("to",edges[routeIndex].dest);
+    var myRoute = edges[routeIndex].route;
+    svgmarker.attr("stroke","blue").transition()
+          .on("start", function(){travelAlong( myRoute.slice(1),  function(){takeRoute(routeList.slice(1))} )}            );
+          //.on("end",    );
+  } else {
+    var N = routeList[0];
+    var routeIndex = edges.findIndex(x => x.id==N);
+    d3.select("#edgeName").html(edges[routeIndex].name);
+    svgmarker.attr("to",edges[routeIndex].dest);
+    var myRoute = edges[routeIndex].route;
+    svgmarker.attr("stroke","red")
+        .transition()
+        .on("start", function(){travelAlong(myRoute.slice(1), visit)} );
+        //.on("start", visit);
+  }
+  svgmarker.attr("from",svgmarker.attr("to"));
+  console.log("      "+svgmarker.attr("to"));
+}
+
+function travelAlong(routePath, actionOnCompletion){
+  if (routePath.length>1){
+    var myDest = routePath[0];
+    d3.select("#destLat").html(myDest.y);
+    //var routeIndex = edges.findIndex(x => x.id==N);
+    //var myRoute = edges[routeIndex].route;
+    svgmarker.transition()
+      .duration((myDest.L)/speed)
+      //.ease(d3.easeLinear)
+      .attr("cx", xs(myDest.x) )
+      .attr("cy", ys(myDest.y) )
+          .on("end", function(){travelAlong(routePath.slice(1), actionOnCompletion)});
+  } else {
+    var myDest = routePath[0];
+    d3.select("#destLat").html(myDest.y);
+    //var routeIndex = edges.findIndex(x => x.id==N);
+    //var myRoute = edges[routeIndex].route;
+    svgmarker.transition()
+      .duration((myDest.L)/speed)
+      //.ease(d3.easeLinear)
+      .attr("cx", xs(myDest.x) )
+      .attr("cy", ys(myDest.y) )
+          .on("end", actionOnCompletion);
+    //.transition()
+    //    .on("start", visit);
+  }
+}
+
+
+</script>
+</html>

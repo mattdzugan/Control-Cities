@@ -1,0 +1,497 @@
+html {
+  border:0px solid white;
+}
+
+/*
+@media (min-width: 500px) {
+   html {
+     border:10px solid white;
+   }
+}
+@media (min-width: 750px) {
+  html {
+    border:20px solid white;
+  }
+}
+*/
+
+.majorSection {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+
+#headerSection{
+  background: #69b93c;
+  background-image: url('../images/hero3.png');
+  background-repeat: repeat;
+  background-position: center;
+   background-attachment: fixed;
+  color: #fff;
+  position: relative;
+  text-align: center;
+}
+#highwaySign{
+  background-color: #61a937;
+  background-color: #72c345;
+  border: solid 3px #fff;
+  border-radius: 10px;
+  display: inline-block;
+}
+#signTop{
+  padding-left: 60px;
+  padding-right: 60px;
+}
+#edgeName{
+  padding-top: 16px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-image: url('../images/sign.svg');
+  background-repeat: none;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#headerViz{
+  border: solid 0px #fff;
+  width: 100%;
+}
+#container1{
+  padding-top:    50px;
+  padding-bottom: 10px;
+}
+#headerSection h1{
+  font-size: 4.8rem;
+  font-family: "Overpass",  Helvetica, Arial, sans-serif;
+  /*
+  text-transform: uppercase;
+  */
+}
+#headerSection h2, #headerSection h4{
+  font-family: "Overpass",  Helvetica, Arial, sans-serif;
+  font-size: 2.4rem;
+  margin-bottom: 0rem;
+}
+#headerSection h2{
+  margin-top: 2rem
+}
+#headerSection h4{
+  margin-top: 0rem
+}
+.authorCred{
+  font-family: "Hind", Garamond, Times, serif;
+  margin-bottom: 0px;
+  /*
+  font-family: "overpassbold",  Helvetica, Arial, sans-serif;
+  */
+}
+.authorCred a{
+  color: #fff;
+  text-transform: none;
+  text-decoration: underline;
+  text-decoration-style: solid;;
+}
+.authorCred a:hover{
+  cursor: pointer;
+}
+/* */
+
+
+
+
+#contentSection{
+  font-size: 1.8rem;
+  line-height: 1.62;
+  color: #444;
+  overflow: hidden;
+}
+#contentSection p{
+  margin-top: 2.0rem;
+}
+
+#contentSection h2{
+  font-size: 3.2rem;
+  color: #444;
+  margin-top: 4rem;
+  margin-bottom: -1.0rem;
+}
+#Quote h2{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: #bdc3c7;
+  color: #444;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+#contentSection a{
+  color: #787;
+  color: #444;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #69b93c;
+  text-decoration-color: #69b93c;
+}
+#contentSection a:hover{
+  color: #444;
+  background-color: #69b93c22;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #69b93c;
+}
+#contentSection .justTheFont{
+  font-family: "Overpass",  Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+.figure-caption{
+  color: #787;
+  font-style: oblique;
+  font-size: 1.4rem;
+  margin-top: -1.4rem;
+}
+
+/* Visualization Stuff */
+
+.mostlyFullWidthViz{
+  text-align: center;
+  width:100%;
+  max-width: 1200px;
+  min-height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#singleHighwayMap{
+  border: solid 0px #555;
+  height: 150px;
+}
+#compassG path{
+  stroke: #444;
+  stroke-linecap:"round";
+  stroke-width: 2;
+}
+#compassL{
+  fill: none;
+}
+#compassR{
+  fill: #444;
+}
+.singleHighwayMain{
+  fill: none;
+  stroke: #444;
+  stroke: rgba(255,196,69,1);
+  stroke-dasharray: 10 3;
+  stroke-linecap:"round";
+  stroke-width: 3;
+}
+.segmentLine{
+  fill: none;
+  stroke-linecap:"round";
+  stroke: #aaa;
+  stroke-width: 2.0;
+}
+.segmentsLeaving{
+  fill: none;
+  stroke-linecap:"round";
+  stroke: #aaa;
+  stroke-width: 1.0;
+}
+.singleHighwayLabel{
+  stroke: none;
+  font-family: "Overpass",  Helvetica, Arial, sans-serif;
+  fill: #787;
+  font-size: 8px;
+}
+.shicityText, .cityLeaving{
+  font-family: "Overpass",  Helvetica, Arial, sans-serif;
+  fill: #444;
+}
+
+#contentSection .cityMapVizDropDown{
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+.standAloneMapDropDown{
+  width:100%;
+}
+.cityMapVizDropDown{
+  width:100%;
+}
+.select2-container--default .select2-selection--multiple{
+  border-color: #cdd2d4;
+  min-height: 24px;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice{
+  background: #cdd2d4;
+  border: none;
+  font-family: "Overpass",  Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+}
+.cityMapVizMap{
+  width:100%;
+  height:400px;
+  overflow: hidden;
+  background: #f5f5f3;
+  border-radius: 4px;
+}
+.cityMapVizMap path {
+  fill: none;
+  stroke-linejoin: round;
+}
+
+
+#rankingsHolder{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  border-left: solid 1px #ddd;
+  margin-left: -49px;
+}
+#rankings{
+  margin-left: 49px;
+}
+#rankings .rankLabel{
+  font-size: 1.6rem;
+}
+#rankings .btnsort{
+  font-size: 1.4rem;
+  color: #555;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 4px 4px;
+  border: 1px solid rgba(255,255,255,0);
+  border-radius: 20px;
+}
+#rankings a.btnsort:hover{
+  background-color: rgba(255,255,255,0);
+  text-decoration: none;
+}
+#rankings .sortButtonsV  a.btnsort:hover, #rankings .sortButtonsP  a.btnsort:hover{
+  color: #64b93c;
+}
+#rankings .sortButtonsD a.btnsort:hover{
+  color: #2d92be;
+}
+#rankings .sortButtonsV .active, #rankings .sortButtonsP .active{
+  border: 1px solid #64b93c;
+  color: #64b93c;
+}
+#rankings .sortButtonsD .active{
+  color: #2d92be;
+  border: 1px solid #2d92be;
+}
+#rankings .sortButtonsV, #rankings .sortButtonsD, #rankings .sortButtonsP{
+  margin-bottom: 0px;
+  margin-top: -10px;
+  line-height: 1.75rem;
+}
+#rankings .search{
+  background-color: #fff;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  display: inline-block;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 1px #555;
+}
+
+
+#rankings .list{
+    background: #fff;
+    padding: 0;
+    list-style-type: none;
+}
+#rankings .infoContainer{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+#rankings .infoContainer .col{
+  padding-left: 0px;
+}
+#rankings .rnkHead{
+  font-size: 1.4rem;
+  padding-top: 2px;
+  margin-bottom: 0px;
+  line-height: 1.0em;
+  font-family: "Overpass",  Helvetica, Arial, sans-serif;
+}
+#rankings .rnkPopLabel{
+  margin-left: 20px;
+}
+#rankings .rnkPopLabel, .rnkPopTxt{
+  font-size: 1.2rem;
+}
+#rankings .rnkInfo{
+  line-height: 1.2em;
+  font-size: 1.4rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#rankings .pagination li a{
+  color: #444;
+  text-decoration: none;
+  border-radius: 20px;
+}
+#rankings .pagination li{
+  border: 1px solid #fff;
+}
+#rankings .pagination .active a{
+  background-color: #fff;
+  border: 1px solid #444;
+}
+#rankings .pagination a:hover{
+  background-color: #ddd;
+  border: 1px solid #444;
+}
+#rankings .pagination li.disabled:hover{
+  background-color: #fff;
+  border: 1px solid #fff;
+  cursor: default;
+}
+#rankings .pagination li.disabled a:hover{
+  background-color: #fff;
+  border: 1px solid #fff;
+  cursor: default;
+}
+
+.simViz#simVizAnchorDiv{
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+.simViz#simVizMapDiv{
+  position: absolute;
+  border: solid 0px #333;
+  left: -120px;
+  top: 0px;
+  width: 120px;
+  height: 824px;
+}
+.simSvg{
+  margin: 0 0;
+}
+.simViz#simVizSimDiv{
+  width: 100%;
+  height: 824px;
+}
+.simVizGround{
+  fill: #eee;
+}
+
+
+
+.fullWidthViz{
+  text-align: center;
+  width:100%;
+  min-height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 1px red;
+}
+.modelImg{
+  width: 100%;
+}
+
+
+#histVizSvg{
+  width: 100%;
+  height: 400px;
+}
+#histVizSvg .axis path,
+#histVizSvg .axis line {
+  fill: none;
+  stroke: #444;
+  shape-rendering: crispEdges;
+}
+#histVizSvg .axis text {
+  font: 10px sans-serif;
+  fill: #444;
+}
+#histVizSvg .histcells path {
+  fill: none;
+  pointer-events: all;
+}
+#histVizSvg .histcells :hover circle {
+  stroke-width: 6px;
+}
+
+
+#footerSection{
+  background: #dcdbdd;
+  background: #778877;
+  color: #fff;
+  background: #bbb;
+}
+#footerSection .extLink{
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  transition-duration: 0.1s;
+}
+#footerSection .extLink:hover{
+  background: #69b93c;
+  cursor: pointer;
+}
+.socialbtns, .socialbtns ul, .socialbtns li{
+	margin: 0;
+	padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+.socialbtns li {
+    list-style: none outside none;
+    display: inline-block;
+}
+.socialbtns .fa {
+	width: 30px;
+  height: 30px;
+	color: #dcdbdd;
+  color: #bbb;
+	background-color: #fff;
+	padding-top: 9px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-o-border-radius: 15px;
+	transition: all ease 0.25s;
+	-moz-transition: all ease 0.25s;
+	-webkit-transition: all ease 0.25s;
+	-o-transition: all ease 0.25s;
+}
+.socialbtns .fa:hover {
+  color: #69b93c;
+	transform: scale(1.5,1.5);
+	-moz-transform: scale(1.5,1.5);
+	-webkit-transform: scale(1.5,1.5);
+	-o-transform: scale(1.5,1.5);
+	transition: all ease 0.25s;
+	-moz-transition: all ease 0.25s;
+	-webkit-transition: all ease 0.25s;
+	-o-transition: all ease 0.25s;
+  text-decoration: none;
+}
+
+
+
+
+body p::-moz-selection{
+  background: #bdc3c7;
+}
+#headerSection h1::-moz-selection{
+  background: #bdc3c7;
+}
+
+#headerSection p a::-moz-selection{
+  background: #bdc3c7;
+}
+
+#headerSection p a i::-moz-selection{
+  background: #bdc3c7;
+}

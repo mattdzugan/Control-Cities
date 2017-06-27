@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+
+
+.simRoad{
+  fill: #eee;
+}
+
+</style>
+<svg id="sim1" width="720" height="200"></svg><br>
+<svg id="sim2" width="720" height="200"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+
+var indexCounter = 0;
+var svg1 = d3.select("#sim1"),
+    width = +svg1.attr("width"),
+    height = +svg1.attr("height");
+var svg2 = d3.select("#sim2");
+
+var mycolors1 = d3.scalePow()
+  .domain([0,1])
+  .range(["#c2e5ae","#69b93c"]);
+var textColors1 = d3.scaleLinear()
+  .domain([0,0.9,1])
+  .range(["#888","#888","#333"]);
+var textSize1 = d3.scaleLinear()
+  .domain([0,0.9,1])
+  .range([6,8,12]);
+var mycolors2 = d3.scalePow()
+  .domain([0,1])
+  .range(["#abc7de","#4682B4"]);
+var textColors2 = d3.scaleLinear()
+  .domain([0,0.9,1])
+  .range(["#888","#888","#333"]);
+var textSize2 = d3.scaleLinear()
+  .domain([0,0.9,1])
+  .range([6,8,12]);
+
+svg1.append("rect")
+  .attr("x",0)
+  .attr("y",0.75*height)
+  .attr("width",width)
+  .attr("height",height*0.25)
+  .attr("fill","#ddd");
+svg1.append("path")
+  .attr("class","simRoad")
+  .attr("d","M" +0.25*width+","+height+
+            " L"+0.75*width+","+height+
+            " L"+0.51*width+","+0.75*height+
+            " L"+0.49*width+","+0.75*height+
+            " L"+0.25*width+","+height);
+svg1.append("text")
+    .attr("id","predictionText1")
+    .attr("x",10)
+    .attr("y",height-10)
+    .attr("fill","#69b93c")
+    .style("font-size","16px")
+    .text("prediction: ");
+svg2.append("rect")
+  .attr("x",0)
+  .attr("y",0.75*height)
+  .attr("width",width)
+  .attr("height",height*0.25)
+  .attr("fill","#ddd");
+svg2.append("path")
+  .attr("class","simRoad")
+  .attr("d","M" +0.25*width+","+height+
+            " L"+0.75*width+","+height+
+            " L"+0.51*width+","+0.75*height+
+            " L"+0.49*width+","+0.75*height+
+            " L"+0.25*width+","+height);
+svg2.append("text")
+    .attr("id","predictionText2")
+    .attr("x",10)
+    .attr("y",height-10)
+    .attr("fill","#4682B4")
+    .style("font-size","16px")
+    .text("prediction: ");
+
+var g1 = svg1.append("g").attr("transform", "translate(0," + (height*0.75) + ")");
+var g2 = svg2.append("g").attr("transform", "translate(0," + (height*0.75) + ")");
+
+d3.json("./data/simulationDemo.json", function(error, jsondata) {
+
+  // update function
+  function update(jdata) {
+    var t = d3.transition()
+        .duration(600)
+        .ease(d3.easeLinear);
+
+
+    mycolors1.domain(d3.extent(jdata, function(d){return d.pop/d.dist;}));
+    var textDomains1 = [mycolors1.domain()[0], 0.99*mycolors1.domain()[1], mycolors1.domain()[1]];
+    textColors1.domain(textDomains1);
+    textSize1.domain(textDomains1);
+
+    mycolors2.domain(d3.extent(jdata, function(d){return d.pop/d.dist/d.dist;}));
+    var textDomains2 = [mycolors2.domain()[0], 0.99*mycolors2.domain()[1], mycolors2.domain()[1]];
+    textColors2.domain(textDomains2);
+    textSize2.domain(textDomains2);
+
+    // JOIN new data with old elements.
+    /*
+    var text = g.selectAll("text")
+      .data(data, function(d) { return d; });
+    // */
+    var circles1 = g1.selectAll(".circles1")
+      .data(jdata, function(d){ return d.id});
+    var circleLabels1 = g1.selectAll(".circleLabels1")
+      .data(jdata, function(d){ return d.id});
+
+    var circles2 = g2.selectAll(".circles2")
+      .data(jdata, function(d){ return d.id});
+    var circleLabels2 = g2.selectAll(".circleLabels2")
+      .data(jdata, function(d){ return d.id});
+
+    // EXIT old elements not present in new data.
+    /*
+    text.exit()
+        .attr("class", "exit")
+      .transition(t)
+        .attr("y", 60)
+        .style("fill-opacity", 1e-6)
+        .remove();
+    // */
+    circles1.exit()
+        .attr("class","circles1 exit")
+      .transition(t)
+        .attr("cy", -60)
+        .attr("cx", function(d, i) { return 360-d.angle*50; })
+        .style("fill-opacity", 1e-6)
+        .remove();
+    circleLabels1.exit()
+        .attr("class","circleLabels1 exit")
+      .transition(t)
+        .attr("y", -60)
+        .attr("x", function(d, i) { return 360-d.angle*50; })
+        .style("fill-opacity", 1e-6)
+        .remove();
+
+    circles2.exit()
+        .attr("class","circles2 exit")
+      .transition(t)
+        .attr("cy", -60)
+        .attr("cx", function(d, i) { return 360-d.angle*50; })
+        .style("fill-opacity", 1e-6)
+        .remove();
+    circleLabels2.exit()
+        .attr("class","circleLabels2 exit")
+      .transition(t)
+        .attr("y", -60)
+        .attr("x", function(d, i) { return 360-d.angle*50; })
+        .style("fill-opacity", 1e-6)
+        .remove();
+
+    // UPDATE old elements present in new data.
+    /*
+    text.attr("class", "update")
+        .attr("y", 0)
+        .style("fill-opacity", 1)
+      .transition(t)
+        .attr("x", function(d, i) { return i * 32; });
+    // */
+    circles1.attr("class", "circles1 update")
+        .style("fill-opacity", 1)
+      .transition(t)
+        .style("fill",function(d,i){return (mycolors1(d.pop/d.dist));})
+        .attr("cy", function(d, i) { return -200*Math.atan2(2,d.dist*1); }) //
+        .attr("r", function(d, i) { return 20*Math.atan2(Math.sqrt(d.pop),d.dist*10); })
+        //.attr("cx", function(d, i) { return 600+Math.pow(-1,d.id)*400*Math.atan2(2,d.dist*1); });
+        .attr("cx", function(d, i) { return 360-d.angle*8; });
+    circleLabels1.attr("class", "circleLabels1 update")
+        .style("fill-opacity", 1)
+      .transition(t)
+        .style("font-size",function(d,i){
+                                        var newFontSize = textSize1(d.pop/d.dist);
+                                        if (newFontSize>10){
+                                          d3.select("#predictionText1").html('prediction: '+d.name)
+                                        }
+                                        return (newFontSize+"px");
+                                        })
+        .style("fill",function(d,i){return (textColors1(d.pop/d.dist));})
+        .attr("y", function(d, i) { return -200*Math.atan2(2,d.dist*1); }) //
+        //.attr("cx", function(d, i) { return 600+Math.pow(-1,d.id)*400*Math.atan2(2,d.dist*1); });
+        .attr("x", function(d, i) { return 360-d.angle*8+20*Math.atan2(Math.sqrt(d.pop),d.dist*10); });
+
+    circles2.attr("class", "circles2 update")
+        .style("fill-opacity", 1)
+      .transition(t)
+        .style("fill",function(d,i){return (mycolors2(d.pop/d.dist/d.dist));})
+        .attr("cy", function(d, i) { return -200*Math.atan2(2,d.dist*1); }) //
+        .attr("r", function(d, i) { return 20*Math.atan2(Math.sqrt(d.pop),d.dist*10); })
+        //.attr("cx", function(d, i) { return 600+Math.pow(-1,d.id)*400*Math.atan2(2,d.dist*1); });
+        .attr("cx", function(d, i) { return 360-d.angle*8; });
+    circleLabels2.attr("class", "circleLabels2 update")
+        .style("fill-opacity", 1)
+      .transition(t)
+      .style("font-size",function(d,i){
+                                      var newFontSize = textSize2(d.pop/d.dist/d.dist);
+                                      if (newFontSize>10){
+                                        d3.select("#predictionText2").html('prediction: '+d.name)
+                                      }
+                                      return (newFontSize+"px");
+                                      })
+        .style("fill",function(d,i){return (textColors2(d.pop/d.dist/d.dist));})
+        .attr("y", function(d, i) { return -200*Math.atan2(2,d.dist*1); }) //
+        //.attr("cx", function(d, i) { return 600+Math.pow(-1,d.id)*400*Math.atan2(2,d.dist*1); });
+        .attr("x", function(d, i) { return 360-d.angle*8+20*Math.atan2(Math.sqrt(d.pop),d.dist*10); });
+
+    // ENTER new elements present in new data.
+    /*
+    text.enter().append("text")
+        .attr("class", "enter")
+        .attr("dy", ".35em")
+        .attr("y", -60)
+        .attr("x", function(d, i) { return i * 32; })
+        .style("fill-opacity", 1e-6)
+        .text(function(d) { return d; })
+      .transition(t)
+        .attr("y", 0)
+        .style("fill-opacity", 1);
+    // */
+
+    circleLabels1.enter().append("text")
+        .attr("class", "circleLabels1 enter")
+        .attr("y", 0)
+        .attr("x", function(d, i) { return 360-d.angle*200; })
+        .style("font-size",function(d,i){return (textSize1(d.pop/d.dist)+"px");})
+        .style("fill",function(d,i){return (textColors1(d.pop/d.dist));})
+        .style("fill-opacity", 1e-6)
+        .text(function(d) { return d.name; })
+      .transition(t)
+        .attr("r", function(d, i) { return 20*Math.atan2(Math.sqrt(d.pop),d.dist*10); })
+        .attr("x", function(d, i) { return 360-d.angle*8; })
+        .style("fill-opacity", 1);
+    circles1.enter().append("circle")
+        .attr("class", "circles1 enter")
+        .attr("r", 0)
+        .attr("cy", 0)
+        .attr("cx", function(d, i) { return 360-d.angle*200; })
+        .style("fill",function(d,i){return (mycolors1(d.pop/d.dist));})
+        .style("fill-opacity", 1e-6)
+      .transition(t)
+        .attr("r", function(d, i) { return 20*Math.atan2(Math.sqrt(d.pop),d.dist*10); })
+        .attr("cx", function(d, i) { return 360-d.angle*8; })
+        .style("fill-opacity", 1);
+
+
+    circleLabels2.enter().append("text")
+        .attr("class", "circleLabels2 enter")
+        .attr("y", 0)
+        .attr("x", function(d, i) { return 360-d.angle*200; })
+        .style("font-size",function(d,i){return (textSize2(d.pop/d.dist/d.dist)+"px");})
+        .style("fill",function(d,i){return (textColors2(d.pop/d.dist/d.dist));})
+        .style("fill-opacity", 1e-6)
+        .text(function(d) { return d.name; })
+      .transition(t)
+        .attr("r", function(d, i) { return 20*Math.atan2(Math.sqrt(d.pop),d.dist*10); })
+        .attr("x", function(d, i) { return 360-d.angle*8; })
+        .style("fill-opacity", 1);
+    circles2.enter().append("circle")
+        .attr("class", "circles2 enter")
+        .attr("r", 0)
+        .attr("cy", 0)
+        .attr("cx", function(d, i) { return 360-d.angle*200; })
+        .style("fill",function(d,i){return (mycolors2(d.pop/d.dist/d.dist));})
+        .style("fill-opacity", 1e-6)
+      .transition(t)
+        .attr("r", function(d, i) { return 20*Math.atan2(Math.sqrt(d.pop),d.dist*10); })
+        .attr("cx", function(d, i) { return 360-d.angle*8; })
+        .style("fill-opacity", 1);
+  } //end update
+
+  // The initial display.
+  update(jsondata[0].cities);
+
+  // Grab a random sample of letters from the alphabet, in alphabetical order.
+  d3.interval(function() {
+    // do this if it's in view
+    indexCounter = (indexCounter+1)%(jsondata.length);
+    update(jsondata[indexCounter].cities);
+
+  }, 600);
+
+
+}); //end JSON dependency
+
+
+function indexOfMax(arr) {
+    if (arr.length === 0) {
+        return -1;
+    }
+    var max = arr[0];
+    var maxIndex = 0;
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            maxIndex = i;
+            max = arr[i];
+        }
+    }
+    return maxIndex;
+}
+</script>

@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'overpassbold';
+    src: url('../fonts/overpass/overpass-bold-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpassbold_italic';
+    src: url('../fonts/overpass/overpass-bold-italic-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-bold-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpassextrabold';
+    src: url('../fonts/overpass/overpass-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpassextrabold_italic';
+    src: url('../fonts/overpass/overpass-extrabold-italic-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-extrabold-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpassextralight';
+    src: url('../fonts/overpass/overpass-extralight-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-extralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpassextralight_italic';
+    src: url('../fonts/overpass/overpass-extralight-italic-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-extralight-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpassheavy';
+    src: url('../fonts/overpass/overpass-heavy-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpassheavy_italic';
+    src: url('../fonts/overpass/overpass-heavy-italic-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-heavy-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpassitalic';
+    src: url('../fonts/overpass/overpass-italic-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpasslight';
+    src: url('../fonts/overpass/overpass-light-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpasslight_italic';
+    src: url('../fonts/overpass/overpass-light-italic-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-light-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpassregular';
+    src: url('../fonts/overpass/overpass-regular-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpasssemibold';
+    src: url('../fonts/overpass/overpass-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpasssemibold_italic';
+    src: url('../fonts/overpass/overpass-semibold-italic-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-semibold-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpassthin';
+    src: url('../fonts/overpass/overpass-thin-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'overpassthin_italic';
+    src: url('../fonts/overpass/overpass-thin-italic-webfont.woff2') format('woff2'),
+         url('../fonts/overpass/overpass-thin-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

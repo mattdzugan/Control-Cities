@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+path{
+  stroke-linecap: "round";
+}
+</style>
+<svg width="650" height="400"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://d3js.org/topojson.v2.min.js"></script>
+<script src="./js/tinycolor.js"></script>
+<script>
+
+var svg = d3.select("svg"),
+    margin = {top: 0, right: 0, bottom: 0, left: 0},
+    width = svg.attr("width") - margin.left - margin.right,
+    height = svg.attr("height") - margin.top - margin.bottom;
+
+//..range(["#69b93c","#58BFAC","#4682B4","#53575A","#914D90","#ED7664","#FFC445"]);
+var raw = "#FFC445"; // Main Color
+var method = "max50";
+var road2 = tinycolor(raw).darken(12).toString();
+var area2 = tinycolor(raw).lighten(0).toString();
+var road1 = tinycolor(raw).lighten(15).desaturate(5).toString();
+var area1 = tinycolor(road1).lighten(10).toString();
+
+    d3.json("./data/conus.topo.json", function(error, us) {
+      if (error) throw error;
+
+      var conus = topojson.feature(us, {
+        type: "GeometryCollection",
+        geometries: us.objects.conus.geometries
+      });
+
+      // Projection
+      myProjection = d3.geoAlbersUsa()
+          .fitSize([width, height], conus);
+      var path = d3.geoPath()
+          .projection(myProjection);
+
+      svg.append("path")
+          .datum(conus)
+          .attr("fill","#eee")
+          .attr("d", path);
+
+
+      d3.json("./data/interstatePaths.json", function(error, r) {
+        if (error) throw error;
+        /*
+        svg.append("path")
+            .datum(r)
+            .attr("fill","none")
+            .attr("stroke","#ddd")
+            .attr("stroke-width",2)
+            .attr("d", path);
+        //*/
+
+        d3.json("./data/modeling/"+method+"_0.json", function(error, d0) {
+          if (error) throw error;
+          /*
+          svg.selectAll(".cityArea0")
+            .data(d0.areas.geometries)
+            .enter()
+            .append("path")
+              .attr("d",function(d){return path(d);})
+              .attr("class","cityArea0")
+              .style("stroke","none")
+              .style("fill", "#Faa");
+          */
+          //*
+          svg.selectAll(".cityLine0")
+            .data(d0.lines.geometries)
+            .enter()
+            .append("path")
+              .attr("d",function(d){return path(d);})
+              .style("stroke","#ddd")
+              .style("fill","none")
+              .style("stroke-width","3px")
+              .attr("class","cityLine0");
+          //*/
+
+              d3.json("./data/modeling/"+method+"_1.json", function(error, d1) {
+                if (error) throw error;
+                /*
+                svg.selectAll(".cityArea1")
+                  .data(d1.areas.geometries)
+                  .enter()
+                  .append("path")
+                    .attr("d",function(d){return path(d);})
+                    .attr("class","cityArea1")
+                    .style("stroke","none")
+                    .style("fill", area1);*/
+                svg.selectAll(".cityLine1")
+                  .data(d1.lines.geometries)
+                  .enter()
+                  .append("path")
+                    .attr("d",function(d){return path(d);})
+                    .style("stroke",road1)
+                    .style("fill","none")
+                    .style("stroke-width","6px")
+                    .attr("stroke-linecap","round")
+                    .attr("class","cityLine1");
+
+
+                    d3.json("./data/modeling/"+method+"_2.json", function(error, d2) {
+                      if (error) throw error;
+                      /*
+                      svg.selectAll(".cityArea2")
+                        .data(d2.areas.geometries)
+                        .enter()
+                        .append("path")
+                          .attr("d",function(d){return path(d);})
+                          .attr("class","cityArea2")
+                          .style("stroke","none")
+                          .style("fill", area2);*/
+                      svg.selectAll(".cityLine2")
+                        .data(d2.lines.geometries)
+                        .enter()
+                        .append("path")
+                          .attr("d",function(d){return path(d);})
+                          .style("stroke",road2)
+                          .style("fill","none")
+                          .attr("stroke-linecap","round")
+                          .style("stroke-width","6px")
+                          .attr("class","cityLine2");
+                    });
+
+
+
+              });
+        });
+      });
+
+
+
+    });
+
+</script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+</body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var width = 720,
+    height = 500;
+
+var svg = d3.select("body").append("svg")
+  .attr("height",height)
+  .attr("width",width)
+
+  var x = d3.scaleLinear()
+      .domain([0,6])
+      .range([0, width]);
+
+  var y = d3.scaleLinear()
+      .domain([0,1.0])
+      .range([height, 0]);
+
+d3.json("./data/modelResultsOverview.json", function(error, data) {
+  L = data.length;
+  x.domain([0,L]);
+
+  for (var ii=0; ii<L; ii++){
+    svg.selectAll(".bubbles")
+      .data(data[ii].data)
+      .enter()
+      .append("circle")
+        .attr("cx",function(d,i){return ((width/L/1.8)*Math.random()+x(ii));})
+        .attr("cy",function(d,i){return y(d);})
+        .attr("r",2);
+
+  }
+  svg.selectAll(".upperBox")
+    .data(data)
+    .enter()
+    .append("rect")
+      .attr("class","upperBox")
+      .attr("x",function(d,i){return (x(i));})
+      .attr("y",function(d,i){return (y(d.Q3));})
+      .attr("height",function(d,i){return (y(1-(d.Q3-d.Q2)));})
+      .attr("width", function(d,i){return (width/L/1.8);})
+      .attr("fill","none")
+      .attr("stroke-width",1)
+      .attr("stroke","blue");
+  svg.selectAll(".lowerBox")
+    .data(data)
+    .enter()
+    .append("rect")
+      .attr("class","upperBox")
+      .attr("x",function(d,i){return (x(i));})
+      .attr("y",function(d,i){return (y(d.Q2));})
+      .attr("height",function(d,i){return (y(1-(d.Q2-d.Q1)));})
+      .attr("width", function(d,i){return (width/L/1.8);})
+      .attr("fill","none")
+      .attr("stroke-width",1)
+      .attr("stroke","blue");
+
+  svg.selectAll(".meanBox")
+    .data(data)
+    .enter()
+    .append("rect")
+      .attr("class","upperBox")
+      .attr("x",function(d,i){return (x(i));})
+      .attr("y",function(d,i){return (y(d.mean));})
+      .attr("height",1)
+      .attr("width", function(d,i){return (width/L/1.8);})
+      .attr("fill","none")
+      .attr("stroke-width",1)
+      .attr("stroke","red");
+
+
+});
+
+</script>
+</html>

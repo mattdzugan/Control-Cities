@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!--
+
+Hi, I'm Matt Dzugan.
+This page was developed from my apartment in Los Angeles.
+While working on it, my feet were acting as a chin-rest for https://www.instagram.com/diegofiestaforever/
+Hope you enjoy!
+
+-->
+<html>
+ <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+   <title>Where are the Highway signs taking us?</title>
+   <link rel="shortcut icon" href="./images/Favicon.png">
+   <link href="https://fonts.googleapis.com/css?family=Hind:300|Gentium+Book+Basic:700i|Overpass:900" rel="stylesheet">
+   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+   <!--
+   <link href="./css/fonts.css" rel="stylesheet">
+    -->
+   <link href="./css/bootstrap.css" rel="stylesheet">
+   <link href="./css/styles.css" rel="stylesheet">
+   <!-- Javascript libraries -->
+   <script src="https://d3js.org/d3.v4.min.js"></script>
+   <script src="https://d3js.org/topojson.v2.min.js"></script>
+   <script src="./js/d3-interpolate-path.js"></script>
+   <script src="./js/list.min.js"></script>
+   <!-- my js -->
+   <script src="./js/pageHelpers.js"></script>
+ </head>
+ <body>
+   <div class="majorSection"  id="headerSection">
+     <div class="container" id="container1">
+       <div id="highwaySign">
+         <h2 id="signTop"><span id="edgeName">405</span> <span id="edgeDir">N</span></h2>
+         <h4>toward</h4>
+         <h4><span id="destLat">Sacramento</span></h4>
+       </div>
+       <div id="headerViz"></div>
+       <div class="row">
+         <div class="col-md-12 col-sm-12 col-xs-12">
+           <h1>Where are the Highway signs taking us?</h1>
+           <p class="authorCred">By: <a target="_blank" href="http://www.mattdzugan.com/">Matt Dzugan</a></p>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="majorSection"  id="contentSection">
+     <div class="container">
+       <div class="minorSection"  id="intro">
+         <p>Every time I get on <a href="http://www.nbc.com/saturday-night-live/video/the-californians/n13474" target="_blank">the 405 North</a> in Los Angeles and see that sign: <span class="justTheFont">I-405 to Sacramento</span>,
+           I always think it's a bit weird.  <i>That's supposed to help me?</i>
+           Sacramento is 6 hours away and there's plenty of other places that we Angelenos are probably actually headed to in-between.
+           Sherman Oaks, San Fernando, Santa Clarita... hell even Bakersfield or Fresno seem more relevant.
+           Or on the other hand, if you're gonna go big, why not just say Seattle?
+        </p>
+        <p>I guess my point is... <i>what's the deal with these signs?</i>
+          You can't tell me you haven't wondered.
+          I mean your GPS navigation's voice reads them to you all the time!
+          Which cities do they use?  How'd they decide on them? Which city has the most miles of signage?
+          Is there a city that has a sign a ridiculous distance away?  What is the meaning of life?
+       </p>
+        <h2>Collecting the data</h2>
+        <p>
+          Like any good internetting detective I started on wikipedia and quickly learned that the
+          <a target="_blank" href="https://en.wikipedia.org/wiki/American_Association_of_State_Highway_and_Transportation_Officials">American Association of State Highway and Transportation Officials</a>
+          calls these
+          <a target="_blank" href="https://en.wikipedia.org/wiki/Control_city">Control Cities</a>,
+          and <a target="_blank" href="http://scote.transportation.org/Pages/Interstate-Control-Cities.aspx">publishes a list</a> of them,
+          but it's only got a handful of interstates and no juicy details of where along the routes each city appears on signs.
+        </p>
+        <p>
+          So to determine the control city along both directions of every interstate in the US, I politely asked my computer to querey Google Directions for 459,072 carefully chosen pairs of starting-points & destinations.
+        </p>
+        <figure class="figure">
+          <img src="images/Algo2.gif" width="100%" />
+          <!--
+          <video width="100%" autoplay loop>
+            <source src="images/Algo2.gif" type="gif" />
+            <source src="images/Algo2.mp4" type="video/mp4" />
+            <source src="images/Algo2.ogv" type="video/ogg" />
+            Your browser does not support the video tag.
+          </video>
+        -->
+          <figcaption class="figure-caption text-right">dramatization</figcaption>
+        </figure>
+
+        <p>
+          For more technical details on how exactly I did this, check out <a>the sauce</a>.
+        </p>
+      </div>
+      <div class="minorSection"  id="Portfolio">
+        <h2>Mapping the cities</h2>
+        <p>
+          Armed with a giant stack of verbal directions from anywhere to anywhere, we can now start stringing them together to make some sense of it all.
+        </p>
+        <p>
+          The map below shows the segments of signage for each city on the interstate.
+          Hover (or tap) on the gray segments to explore which city is which.
+          <br><br>
+          <select class="singleHighwayDropDown"> <!-- https://select2.github.io/examples.html#data -->
+          </select>
+      </p>
+      </div>
+    </div>
+    <div class="mostlyFullWidthViz" id="singleHighwayMap"></div>
+    <div class="container">
+      <div class="minorSection">
+        <p>
+          It should be noted that I removed all non-city things like airports, bridges, roads, universities, states,
+          <a href="https://media.tenor.co/images/306f5f1728bb4135a143efcc8008ceda/tenor.gif" target="_blank">countries</a> etc...
+        </p>
+        <p>
+          There's a couple patterns that jump out right away.
+          If you're like me and you've logged your fair share of interstate miles, you'll find these intuitive.
+        </p>
+        <ol>
+          <li>
+            Cities are generally signed from both directions with a signage gap in the middle where the actual city is.
+            Usually there are signs for specific roads and exits when approaching the city center, so this makes sense.
+            <a>GOOD EXAMPLE</a>
+          </li>
+          <li>
+            Signage for a given city from a given direction is not necessarily continuous.
+            Again... We've all experienced this.  Sometimes a route towards a big city can be temporarily overtaken by a medium sized city.
+            <a>GOOD EXAMPLE</a>
+          </li>
+        </ol>
+        <p>
+          One thing that came by surprise to me though, was how often there are cities that are only signed from one direction.
+          <a>GOOD EXAMPLES</a>
+          It would definitely be harder to notice this as a driver as it's not often that you're comparing signs from one direction of your trip to another.
+        </p>
+        <p>
+          After seeing a few of the maps above, you start to wonder: <i>Which cities show up the most often?</i>
+          I wrestled with the different ways to answer that.
+          On one hand, we want to see which city has the most mileage of signage,
+          but on the other hand if we think of the whole region around the highway as being the territory of that city,
+          then we can create a map the territorial regions of each city - which just sounds cool.
+          So let's explore both.
+        </p>
+        <p>
+          Select a few cities:<br>
+          <select class="cityMapVizDropDown" multiple="multiple"> <!-- https://select2.github.io/examples.html#data -->
+          </select>
+        </p>
+        <figure>
+          <svg class="cityMapVizMap"></svg>
+          <figcaption class="figure-caption text-right">
+            Go all the way down the rabbit hole in <a href="./map.html">Full Screen Mode</a>.
+          </figcaption>
+        </figure
+        <p style="margin-top:-12px"></p>
+        <p>
+          The territory area in these maps is the region for which that section of interstate is the closest section of interstate.
+          In other words, every person living in Seattle's "interstate territory" can say that their closest interstate will point them toward Seattle.
+        </p>
+        <p>
+          For some perspective here: Billings, Montana's "interstate territory" is larger in area than the entire country of Italy. Crazy.
+        </p>
+        <p>
+          A couple interesting observations:
+          <ol>
+            <li>
+              Extending our earlier observation, we see that generally cities tend to be approached from all directions with a donut hole carved out in the middle for local "downtown" signage.
+              <br><a href="./map.html#1840018789" target="_blank">Denver</a> is a cool example of this.
+            </li>
+            <li>
+              While signs for highly urban cities do sprawl out directly from the city center, they also show up as small patches in other nearby big cities,
+              Leaving the rural gaps in between to be signed for smaller local towns.
+              This ultimately creates a "urban-to-urban" and "rural-to-rural" convention.
+              <br><a href="./map.html#1840000494and1840001651" target="_blank">St Louis, and Chicago</a> both are good examples of this.
+            </li>
+            <li>
+              Being that the East Coast is generally more population (and thus interstate) dense than the West, East Coast cities have smaller territories.
+              <br><a href="./map.html#1840008329and1840020491and1840000455and1840021117and1840006060and1840019941" target="_blank">See for yourself</a>
+            </li>
+          </ol>
+        </p>
+
+
+        <h2>City Superlatives</h2>
+        <p>
+          Enough maps already, let's get to some numbers.
+          The table below shows the summary of the statistics for all 1184 signed cities in the lower 48 United States.
+          In addition to the mileage and territory stats,
+          I've also included the quantity of interstates each city is signed on, as well as the distance from the city center to the farthest sign.
+        </p>
+        <div class="" id="rankingsHolder">
+        <div id="rankings">
+          <p class="rankLabel">Sort by:</p>
+
+          <div class="container sortButtonsV">
+            <div class="col col-md-3 col-sm-3 col-xs-6">
+              <a class="btnsort" id="rnkMiles">miles</a>
+            </div>
+            <div class="col col-md-3 col-sm-3 col-xs-6">
+              <a class="btnsort" id="rnkArea">area</a>
+            </div>
+            <div class="col col-md-3 col-sm-3 col-xs-6">
+              <a class="btnsort" id="rnkCount">count</a>
+            </div>
+            <div class="col col-md-3 col-sm-3 col-xs-6">
+              <a class="btnsort" id="rnkDist">distance</a>
+            </div>
+          </div>
+          <div class="container sortButtonsD">
+            <div class="col col-md-3 col-sm-3 col-xs-6">
+              <a class="btnsort" id="rnkMilesD">miles per capita</a>
+            </div>
+            <div class="col col-md-3 col-sm-3 col-xs-6">
+              <a class="btnsort" id="rnkAreaD">area per capita</a>
+            </div>
+            <div class="col col-md-3 col-sm-3 col-xs-6">
+              <a class="btnsort" id="rnkCountD">count per capita</a>
+            </div>
+            <div class="col col-md-3 col-sm-3 col-xs-6">
+              <a class="btnsort" id="rnkDistD">distance per capita</a>
+            </div>
+          </div>
+          <div class="container sortButtonsP">
+            <div class="col col-md-3 col-sm-3 col-xs-6">
+              <a class="btnsort" id="rnkPop">pop</a>
+            </div>
+          </div>
+          <p class="rankLabel">Search: <input class="search" placeholder="My Hometown" /></p>
+          <ul class="list">
+          </ul>
+          <ul class="pagination"></ul><br>
+        </div>
+        </div>
+        <p>
+          I've actually gone and <a>contacted each of the cities on twitter</a> to notify them of their
+          <a href="https://media.giphy.com/media/LoopPmfjMJxiE/giphy.gif" target="_blank">major award(s).</a>
+          So far no responses.
+        </p>
+      </div>
+
+
+
+      <div class="minorSection"  id="Bio">
+        <h2>Determining which signs go where</h2>
+        <p>
+          I have no idea how or why the cities were chosen.
+          In order to try and wrap my head around the signage we have today, I figured I'd see if I could reproduce it.
+         </p>
+         <!-- http://whatgiftoday.tumblr.com/post/25648916726 -->
+         <p>
+          I tried a few different models to try and predict which cities would appear on which signs.
+          No, not <a href="https://media.giphy.com/media/GF18oM9FxO41i/giphy.gif" target="_blank">that kind of modeling</a>...
+          modeling is a word which here means building a fake thing to represent a real thing.
+        </p>
+        <p>
+          Let's put ourselves in the shoes of the sign makers.
+          If we had to pick which city we're currently headed towards, we'd probably pick the most prominent city that lies ahead.
+        </p>
+        <p>
+          But what exactly does prominent mean? Who knows!? I tried 7 definitions:
+        </p>
+        <ul>
+          <li>
+            <span style="font-weight:bold; color:#69b93c">Tallest Tower</span> -
+            Each member of a city stands on each-other's shoulders forming a giant tower.
+            Whichever city's tower appears the tallest from where we are, is the one we pick for the sign.
+          </li>
+          <li>
+            <span style="font-weight:bold; color:#58BFAC">Tallest Triangle</span> -
+            Members of the city line up in a single file line and kneel on the ground.
+            Subsequent members kneel on their backs, and then another group on theirs etc. forming a giant cheerleader triangle.
+            Whichever city's triangle appears the tallest from where we are, is the one we pick for the sign.
+          </li>
+          <li>
+            <span style="font-weight:bold; color:#4682B4">Tallest Pyramid</span> -
+            Members of the city clump together in a square formation and kneel on the ground.
+            Subsequent members kneel on their backs, and then another group on theirs etc. forming a giant pyramid.
+            Whichever city's pyramid appears the tallest from where we are, is the one we pick for the sign.
+          </li>
+          <li>
+            <span style="font-weight:bold; color:#53575A">Tallest Super-Ultra-Hyper-Mega-Meta Tower</span> -
+            Each member of a city stands on each-other's shoulders forming a giant stack.
+            A photographer takes a photo of this stack and delivers a copy to each citizen.
+            The citizens each find a very tall tree and carve a totem pole as a replica of the original tower.
+            The citizens all meet the next day and stack their towers together. (yes Los Angeles's tower would go past Pluto)
+            Whichever city's tower appears the tallest from where we are, is the one we pick for the sign.
+          </li>
+          <li>
+            <span style="font-weight:bold; color:#914D90">Big and Close-ish</span> -
+            We pick the most populous city within 500 miles for the sign.
+          </li>
+          <li>
+            <span style="font-weight:bold; color:#ED7664">Big and Close</span> -
+            We pick the most populous city within 100 miles for the sign.
+          </li>
+          <li>
+            <span style="font-weight:bold; color:#FFC445">Big and Very Close</span> -
+            We pick the most populous city within 50 miles for the sign.
+          </li>
+        </ul>
+        <div class="hidden-xs hidden-sm">
+          <p>
+            Let's take a look at how these various prediction schemes play out using I-55N as an example.
+          </p>
+          <div   class="simViz" id="simVizAnchorDiv">
+            <div class="simViz" id="simVizSimDiv">
+              <svg id="sim1" width="720" height="112" class=""></svg>
+              <svg id="sim2" width="720" height="112" class=""></svg>
+              <svg id="sim3" width="720" height="112" class=""></svg>
+              <svg id="sim4" width="720" height="112" class=""></svg>
+              <svg id="sim5" width="720" height="112" class=""></svg>
+              <svg id="sim6" width="720" height="112" class=""></svg>
+              <svg id="sim7" width="720" height="112" class=""></svg>
+            </div>
+            <!--
+            <div class="simViz hidden-xs hidden-sm" id="simVizMapDiv"></div>
+            -->
+          </div>
+        </div>
+        <p>
+          I also have to point out that the <span style="font-weight:bold; color:#69b93c">Tallest Tower</span>
+          and the <span style="font-weight:bold; color:#58BFAC">Tallest Triangle</span>
+          prediction schemes actually have some cool corrolaries in the sound-wave-propogation world.
+          The perceived loudness of a city full of people chanting in unison would yield the same predictions as our <span style="font-weight:bold; color:#69b93c">Tallest Tower</span> scheme.
+          The perceived loudness of a city full of people individually talking (incohenrent grumbling as a group) would yield the same predictions as our <span style="font-weight:bold; color:#58BFAC">Tallest Triangle</span> scheme.
+        </p>
+        <p>
+          None of these schemes are perfect.
+          In fact, they all hover around a 1-out-of-3 success rate.
+          For every 3 times I see a highway sign, we'll be able to predict the listed city 1 out of those 3 times.
+          Which isn't too bad considering these cities were probably determined somewhat arbitrarily 30+ years ago.
+        </p>
+     </div>
+   </div>
+   <div class="mostlyFullWidthViz" id="smallMultsContainer">
+     <div class="row">
+     <div class="col-sm-3 col-xs-6 multsLegend"></div>
+     <div class="col-sm-3 col-xs-6">
+       <span style="font-weight:bold; color:#69b93c">Tallest Tower</span>
+       <img class="modelImg" src="images/modelMaps/model1.png">
+     </div>
+     <div class="col-sm-3 col-xs-6">
+       <span style="font-weight:bold; color:#58BFAC">Tallest Triangle</span>
+       <img class="modelImg" src="images/modelMaps/model2.png">
+     </div>
+     <div class="col-sm-3 col-xs-6">
+       <span style="font-weight:bold; color:#4682B4">Tallest Pyramid</span>
+       <img class="modelImg" src="images/modelMaps/model3.png">
+     </div>
+     <div class="col-sm-3 col-xs-6">
+       <span style="font-weight:bold; color:#53575A">Tallest <span style="font-size:6px">Super-Ultra-Hyper-Mega-Meta</span> Tower</span>
+       <img class="modelImg" src="images/modelMaps/model4.png">
+     </div>
+     <div class="col-sm-3 col-xs-6">
+       <span style="font-weight:bold; color:#914D90">Big and Close-ish</span>
+       <img class="modelImg" src="images/modelMaps/model5.png">
+     </div>
+     <div class="col-sm-3 col-xs-6">
+       <span style="font-weight:bold; color:#ED7664">Big and Close</span>
+       <img class="modelImg" src="images/modelMaps/model6.png">
+     </div>
+     <div class="col-sm-3 col-xs-6">
+       <span style="font-weight:bold; color:#FFC445">Big and Very Close</span>
+       <img class="modelImg" src="images/modelMaps/model7.png">
+     </div>
+   </div>
+   </div>
+   <div class="container">
+     <div class="minorSection" style="margin-top: 20px;">
+       <p>
+         One observation is that there's a couple areas where they all do well,
+         and a couple areas where they all fail.
+         Blah Blah Blah Blah Blah Blah Blah Blah.
+         Blah Blah Blah Blah Blah Blah Blah Blah.
+         Blah Blah Blah Blah Blah Blah Blah Blah.
+         Blah Blah Blah Blah Blah Blah Blah Blah.
+      </p>
+      <svg id="histVizSvg"></svg>
+      <button id="histButton">show details</button>
+      <p>
+        Blah Blah Blah Blah Blah Blah Blah Blah.
+        Blah Blah Blah Blah Blah Blah Blah Blah.
+        Blah Blah Blah Blah Blah Blah Blah Blah.
+        Blah Blah Blah Blah Blah Blah Blah Blah.
+     </p>
+     </div>
+
+      <div class="minorSection"  id="Bio">
+        <h2>Final Thoughts</h2>
+        <p>
+        Blah Blah Blah Blah Blah Blah Blah Blah.
+        Blah Blah Blah Blah Blah Blah Blah Blah.
+        Blah Blah Blah Blah Blah Blah Blah Blah.
+        Blah Blah Blah Blah Blah Blah Blah Blah.
+       </p>
+       <p>
+         Also, <a target="_blank" href="https://youtu.be/nT280DVMvwQ?t=8s" >100 points to you</a> if you noticed the highway sign font.
+         I'm guessing the slanty top of the <span class="justTheFont">b d h k l t</span> was either a dead give-away, or that you'll now notice it on every sign for the rest of your life and think of this article every time you see it.
+       </p>
+     </div>
+    </div>
+   </div>
+   <div class="majorSection"  id="footerSection">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-4 col-sm-4 col-xs-12">
+           <h3>Another One</h3>
+           <p><a class="extLink" href="http://resonances.space">Orbital Resonances</a></p>
+         </div>
+         <div class="col-md-4 col-sm-4 col-xs-12">
+           <h3>Contact</h3>
+           <p><a class="extLink" href="http://www.mattdzugan.com">mattdzugan.com</a></p>
+           <p><a class="extLink" href="mailto:hello@mattdzugan.com">hello@mattdzugan.com</a></p>
+         </div>
+         <div class="col-md-4 col-sm-4 col-xs-12">
+           <h3>Thanks</h3>
+           <p><a class="extLink" target="_blank" href="https://developers.google.com/maps/documentation/directions/">Google Maps APIs</a></p>
+           <p><a class="extLink" target="_blank" href="https://d3js.org/">D3.js by GOAT Mike Bostock</a></p>
+           <p><a class="extLink" target="_blank" href="http://simplemaps.com/data/us-cities">simplemaps.com</a></p>
+         </div>
+       </div>
+       <div class="row">
+         <ul class="socialbtns">
+           <li><a href="https://twitter.com/MattDzugan" class="fa fa-lg fa-twitter"></a></li>
+           <li><a href="https://github.com/mattdzugan" class="fa fa-lg fa-github"></a></li>
+           <li><a href="https://www.instagram.com/dzugan8926/" class="fa fa-lg fa-instagram"></a></li>
+           <li><a href="https://codepen.io/mattdzugan/" class="fa fa-lg fa-codepen"></a></li>
+           <li><a href="https://dribbble.com/MattDzugan" class="fa fa-lg fa-dribbble"></a></li>
+           <li><a href="https://medium.com/@mattdzugan" class="fa fa-lg fa-medium"></a></li>
+         </ul>
+       </div>
+     </div>
+   </div>
+   <script src="./js/headerViz.js"></script>
+   <script src="https://d3js.org/d3-tile.v0.0.min.js"></script>
+   <script src="./js/textures.min.js"></script>
+   <script
+			  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+			  crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+   <script src="./js/singleHighwayViz.js"></script>
+   <script src="./js/cityMapViz.js"></script>
+   <script src="./js/listViz.js"></script>
+   <script src="./js/simulationViz.js"></script>
+   <script src="./js/multiMapLegend.js"></script>
+   <script src="./js/histViz.js"></script>
+   <script>
+    whichVizAreInView();
+   </script>
+   <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-90266121-4', 'auto');
+    ga('send', 'pageview');
+  </script>
+ </body>
+</html>

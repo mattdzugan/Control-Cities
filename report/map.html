@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<!--
+
+Hi, I'm Matt Dzugan.
+This page was developed from my apartment in Los Angeles.
+While working on it, my feet were acting as a chin-rest for https://www.instagram.com/diegofiestaforever/
+Hope you enjoy!
+
+-->
+<html>
+ <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title>Where are the Highway signs taking us</title>
+   <link rel="shortcut icon" href="./images/Favicon.png">
+   <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">-->
+   <link href="https://fonts.googleapis.com/css?family=Hind:300|Gentium+Book+Basic:700i|Overpass:900" rel="stylesheet">
+   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+   <!--
+   <link href="./css/fonts.css" rel="stylesheet">
+    -->
+   <link href="./css/bootstrap.css" rel="stylesheet">
+   <link href="./css/styles.css" rel="stylesheet">
+   <!-- Javascript libraries -->
+   <script src="http://d3js.org/d3.v4.min.js"></script>
+   <script src="http://d3js.org/topojson.v1.min.js"></script>
+ </head>
+  <style>
+    body {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: #f5f5f3;
+      color: #444;
+    }
+    path {
+      fill: none;
+      stroke-linejoin: round;
+    }
+    .mapContainer{
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    .mapContainer svg{
+      overflow: hidden;
+    }
+    .mapHeader{
+      position: absolute;
+      top:0px;
+      left:0px;
+      width: 100%;
+      background-color: #f5f5f3;
+      -webkit-box-shadow: 0 6px 6px -0px rgba(205, 210, 212, 0.7);
+         -moz-box-shadow: 0 6px 6px -0px rgba(205, 210, 212, 0.7);
+              box-shadow: 0 6px 6px -0px rgba(205, 210, 212, 0.7);
+    }
+    .mapHeader h3{
+      font-family: "Overpass",  Helvetica, Arial, sans-serif;
+    }
+    .mapHeader a{
+      color: #333;
+      color: #69b93c;
+    }
+  </style>
+  <body>
+    <div class="mapContainer">
+      <div class="mapHeader">
+        <div class="container">
+          <h3>Where are the Highway signs taking us?</h3>
+          <p>Check out the <a href="./index.html">whole essay</a>.</p>
+          <p>
+            Select a few cities:<br>
+            <select class="standAloneMapDropDown" multiple="multiple"> <!-- https://select2.github.io/examples.html#data -->
+            </select>
+          </p>
+        </div>
+      </div>
+      <svg></svg>
+    </div>
+  </body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-tile.v0.0.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="./js/textures.min.js"></script>
+<script
+     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+     integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+     crossorigin="anonymous"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script>
+var myAreas,myLines;
+var myAreaGeoms = [];
+var myLineGeoms = [];
+//Dropdown
+
+
+d3.json("./data/cityList.json", function(error, io) {
+  if (error) throw error;
+  $(".standAloneMapDropDown").select2({
+    data: io
+  });
+  var initHash = window.location.hash;
+  if (!initHash || initHash.length<5 ){
+    $('.standAloneMapDropDown').select2().val([1840020491, 1840021117, 1840001651]).trigger("change");
+  }else{
+    var noHash = initHash.substr(1);
+    var listOfCityIDstrings = noHash.split('and');
+    var listOfCityIDNums = listOfCityIDstrings.map(Number);
+    $('.standAloneMapDropDown').select2().val(listOfCityIDNums).trigger("change");
+  }
+});
+$('.standAloneMapDropDown').on('change', function (evt) {
+  // Clear the things (yeah this is wasteful, i'll do the enter/exit later)
+  myAreaGeoms = [];
+  myLineGeoms = [];
+  d3.selectAll(".cityArea").remove();
+  d3.selectAll(".cityLine").remove();
+  // render the things
+  var cityIDs = $('.standAloneMapDropDown').select2().val()
+  var newHash = "#"+cityIDs.join('and');
+  window.location = newHash;
+  cityIDs.forEach(function(d,i){plotThisCity(d);});
+
+
+});
+
+
+//.range(["#69b93c","#58BFAC","#4682B4","#914D90","#ED7664","#FFC445"]);
+// create all the textures
+var lime   = "rgba(105,185,60,1)",
+    green  = "rgba(88,191,172,1)",
+    blue   = "rgba(70,130,180,1)",
+    purple = "rgba(145,77,144,1)",
+    orange = "rgba(237,118,100,1)",
+    yellow = "rgba(255,196,69,1)";
+var limeT   = "rgba(105,185,60,0.05)",
+    greenT  = "rgba(88,191,172,0.15)",
+    blueT   = "rgba(70,130,180,0.05)",
+    purpleT = "rgba(145,77,144,0.05)",
+    orangeT = "rgba(237,118,100,0.05)",
+    yellowT = "rgba(255,196,69,0.20)";
+
+
+
+
+var tx1 = textures.lines()
+  .thicker()
+  .orientation("vertical")
+  .strokeWidth(0.5)
+  .background(limeT)
+  .stroke(lime);
+var tx2 = textures.lines()
+  .thicker()
+  .orientation("vertical")
+  .strokeWidth(0.5)
+  .background(greenT)
+  .stroke(green);
+var tx3 = textures.lines()
+  .thicker()
+  .orientation("vertical")
+  .strokeWidth(0.5)
+  .background(blueT)
+  .stroke(blue);
+var tx4 = textures.lines()
+  .thicker()
+  .orientation("vertical")
+  .strokeWidth(0.5)
+  .background(yellowT)
+  .stroke(yellow);
+var tx5 = textures.lines()
+  .thicker()
+  .orientation("vertical")
+  .strokeWidth(0.5)
+  .background(orangeT)
+  .stroke(orange);
+var tx6 = textures.lines()
+  .thicker()
+  .orientation("vertical")
+  .strokeWidth(0.5)
+  .background(purpleT)
+  .stroke(purple);
+
+var tx7 = textures.lines()
+  .orientation("3/8", "7/8")
+  .strokeWidth(0.5)
+  .background(limeT)
+  .stroke(lime);
+var tx8 = textures.lines()
+  .orientation("3/8", "7/8")
+  .strokeWidth(0.5)
+  .background(greenT)
+  .stroke(green);
+var tx9 = textures.lines()
+  .orientation("3/8", "7/8")
+  .strokeWidth(0.5)
+  .background(blueT)
+  .stroke(blue);
+var tx10 = textures.lines()
+  .orientation("3/8", "7/8")
+  .strokeWidth(0.5)
+  .background(yellowT)
+  .stroke(yellow);
+var tx11 = textures.lines()
+  .orientation("3/8", "7/8")
+  .strokeWidth(0.5)
+  .background(orangeT)
+  .stroke(orange);
+var tx12 = textures.lines()
+  .orientation("3/8", "7/8")
+  .strokeWidth(0.5)
+  .background(purpleT)
+  .stroke(purple);
+
+var tx13 = textures.circles()
+  .lighter()
+  .complement()
+  .background(limeT)
+  .radius(2)
+  .stroke(lime)
+  .fill("transparent")
+  .strokeWidth(0.5);
+var tx14 = textures.circles()
+  .lighter()
+  .complement()
+  .background(greenT)
+  .radius(2)
+  .stroke(green)
+  .fill("transparent")
+  .strokeWidth(0.5);
+var tx15 = textures.circles()
+  .lighter()
+  .complement()
+  .background(blueT)
+  .radius(2)
+  .stroke(blue)
+  .fill("transparent")
+  .strokeWidth(0.5);
+var tx16 = textures.circles()
+  .lighter()
+  .complement()
+  .background(yellowT)
+  .radius(2)
+  .stroke(yellow)
+  .fill("transparent")
+  .strokeWidth(0.5);
+var tx17 = textures.circles()
+  .lighter()
+  .complement()
+  .background(orangeT)
+  .radius(2)
+  .stroke(orange)
+  .fill("transparent")
+  .strokeWidth(0.5);
+var tx18 = textures.circles()
+  .lighter()
+  .complement()
+  .background(purpleT)
+  .radius(2)
+  .stroke(purple)
+  .fill("transparent")
+  .strokeWidth(0.5);
+
+var tx19 = textures.paths()
+  .d("hexagons")
+  .size(7)
+  .background(limeT)
+  .stroke(lime)
+  .strokeWidth(0.5);
+var tx20 = textures.paths()
+  .d("hexagons")
+  .size(7)
+  .background(greenT)
+  .stroke(green)
+  .strokeWidth(0.5);
+var tx21 = textures.paths()
+  .d("hexagons")
+  .size(7)
+  .background(blueT)
+  .stroke(blue)
+  .strokeWidth(0.5);
+var tx22 = textures.paths()
+  .d("hexagons")
+  .size(7)
+  .background(yellowT)
+  .stroke(yellow)
+  .strokeWidth(0.5);
+var tx23 = textures.paths()
+  .d("hexagons")
+  .size(7)
+  .background(orangeT)
+  .stroke(orange)
+  .strokeWidth(0.5);
+var tx24 = textures.paths()
+  .d("hexagons")
+  .size(7)
+  .background(purpleT)
+  .stroke(purple)
+  .strokeWidth(0.5);
+
+var tx25 = textures.paths()
+  .d("nylon")
+  .background(limeT)
+  .stroke(lime)
+  .strokeWidth(0.5);
+var tx26 = textures.paths()
+  .d("nylon")
+  .background(greenT)
+  .stroke(green)
+  .strokeWidth(0.5);
+var tx27 = textures.paths()
+  .d("nylon")
+  .background(blueT)
+  .stroke(blue)
+  .strokeWidth(0.5);
+var tx28 = textures.paths()
+  .d("nylon")
+  .background(yellowT)
+  .stroke(yellow)
+  .strokeWidth(0.5);
+var tx29 = textures.paths()
+  .d("nylon")
+  .background(orangeT)
+  .stroke(orange)
+  .strokeWidth(0.5);
+var tx30 = textures.paths()
+  .d("nylon")
+  .background(purpleT)
+  .stroke(purple)
+  .strokeWidth(0.5);
+
+var tx31 = textures.paths()
+  .d("waves")
+  .thicker()
+  .strokeWidth(0.5)
+  .background(limeT)
+  .stroke(lime);
+var tx32 = textures.paths()
+  .d("waves")
+  .thicker()
+  .strokeWidth(0.5)
+  .background(greenT)
+  .stroke(green);
+var tx33 = textures.paths()
+  .d("waves")
+  .thicker()
+  .strokeWidth(0.5)
+  .background(blueT)
+  .stroke(blue);
+var tx34 = textures.paths()
+  .d("waves")
+  .thicker()
+  .strokeWidth(0.5)
+  .background(yellowT)
+  .stroke(yellow);
+var tx35 = textures.paths()
+  .d("waves")
+  .thicker()
+  .strokeWidth(0.5)
+  .background(orangeT)
+  .stroke(orange);
+var tx36 = textures.paths()
+  .d("waves")
+  .thicker()
+  .strokeWidth(0.5)
+  .background(purpleT)
+  .stroke(purple);
+
+var colorList  = [lime,  green,  blue,  yellow,  orange,  purple];
+var colorListT = [limeT, greenT, blueT, yellowT, orangeT, purpleT];
+var textureList = [ tx1,  tx2,  tx3,  tx4,  tx5,  tx6,
+                    tx7,  tx8,  tx9,  tx10, tx11, tx12,
+                    tx13, tx14, tx15, tx16, tx17, tx18,
+                    tx19, tx20, tx21, tx22, tx23, tx24,
+                    tx25, tx26, tx27, tx28, tx29, tx30,
+                    tx31, tx32, tx33, tx34, tx35, tx36];
+
+
+
+
+
+
+var pi = Math.PI,
+    tau = 2 * pi;
+
+var width  = window.innerWidth;
+var height = window.innerHeight;
+
+// Initialize the projection to fit the world in a 1×1 square centered at the origin.
+var projection = d3.geoMercator()
+    .scale(1 / tau)
+    .translate([0, 0]);
+
+var path = d3.geoPath()
+    .projection(projection);
+
+var tile = d3.tile()
+    .size([width, height]);
+
+var zoom = d3.zoom()
+    .scaleExtent([1 << 13, 1 << 20])
+    .on("zoom", zoomed);
+
+var svg = d3.select("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.call(tx7);  svg.call(tx8);  svg.call(tx9);  svg.call(tx10);  svg.call(tx5);  svg.call(tx6);
+svg.call(tx1);  svg.call(tx2);  svg.call(tx3);  svg.call(tx4);   svg.call(tx11); svg.call(tx12);
+svg.call(tx13); svg.call(tx14); svg.call(tx15); svg.call(tx16);  svg.call(tx17); svg.call(tx18);
+svg.call(tx19); svg.call(tx20); svg.call(tx21); svg.call(tx22);  svg.call(tx23); svg.call(tx24);
+svg.call(tx25); svg.call(tx26); svg.call(tx27); svg.call(tx28);  svg.call(tx29); svg.call(tx30);
+svg.call(tx31); svg.call(tx32); svg.call(tx33); svg.call(tx34);  svg.call(tx35); svg.call(tx36);
+
+
+var raster = svg.append("g");
+var center = projection([-98.5, 39.5]);
+svg
+    .call(zoom)
+    .call(zoom.transform, d3.zoomIdentity
+        .translate(width / 2, height / 2)
+        .scale(1 << 13)
+        .translate(-center[0], -center[1]));
+
+
+
+function plotThisCity(cc){
+  //1840021117
+  d3.json(("./data/cities/"+cc+".json"), function(error, city) {
+    if (error) throw error;
+    myAreas = city.areas;
+    myLines = city.lines;
+    myAreaGeoms.push.apply(myAreaGeoms,myAreas.geometries);
+    myLineGeoms.push.apply(myLineGeoms,myLines.geometries);
+
+    // pick the texture;
+    var cID = (Number(cc) % 6);
+    var tID = (Number(cc) % 36);
+
+
+    svg.selectAll(".cityArea")
+      .data(myAreaGeoms)
+      .enter()
+      .append("path")
+        .attr("d",function(d){return path(d);})
+        .attr("class","cityArea")
+        .style("fill", textureList[tID].url());
+
+    svg.selectAll(".cityLine")
+      .data(myLineGeoms)
+      .enter()
+      .append("path")
+        .attr("d",function(d){return path(d);})
+        .style("stroke",colorList[cID])
+        .style("stroke-width","2px")
+        .attr("class","cityLine");
+
+  });
+
+}
+
+
+
+
+
+
+
+
+function zoomed() {
+  var transform = d3.event.transform;
+
+  var tiles = tile
+      .scale(transform.k)
+      .translate([transform.x, transform.y])
+      ();
+  //*
+  projection
+      .scale(transform.k / tau)
+      .translate([transform.x, transform.y]);
+
+  svg.selectAll(".cityArea").data(myAreaGeoms).attr("d",function(d){return path(d);});
+  svg.selectAll(".cityLine").data(myLineGeoms).attr("d",function(d){return path(d);});
+  //*/
+  /*
+  svg.selectAll(".cityArea").attr("transform",transform);
+  svg.selectAll(".cityLine").attr("transform",transform).style("stroke-width",1/transform.k);
+  */
+
+  var image = raster
+      .attr("transform", stringify(tiles.scale, tiles.translate))
+    .selectAll("image")
+    .data(tiles, function(d) { return d; });
+
+  image.exit().remove();
+
+  image.enter().append("image")
+      //.attr("xlink:href", function(d) { return "http://" + "abc"[d[1] % 3] + ".tile.openstreetmap.org/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
+      .attr("xlink:href", function(d) { return "https://" + "cartodb-basemaps-" + "abc"[d[1] % 3] + ".global.ssl.fastly.net/light_all/" + d[2] + "/" + d[0] + "/" + d[1] + ".png"; })
+      .attr("x", function(d) { return d[0] * 256; })
+      .attr("y", function(d) { return d[1] * 256; })
+      .attr("width", 256)
+      .attr("height", 256);
+}
+
+function stringify(scale, translate) {
+  var k = scale / 256, r = scale % 1 ? Number : Math.round;
+  return "translate(" + r(translate[0] * scale) + "," + r(translate[1] * scale) + ") scale(" + k + ")";
+}
+
+</script>

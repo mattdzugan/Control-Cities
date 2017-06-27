@@ -7,9 +7,15 @@ data/interim/*
 data/temp/*
 data/Raw/*
 
+
+# stupid jetbrains thing
+.idea*
+
 #any of my internal TODO files
 *TODO.txt
 
+#where my api key leaves
+src/config*
 
 # Folder config file
 Desktop.ini
@@ -21,3 +27,4 @@ $RECYCLE.BIN/
 report/design.svg
 report/images/art/*
 report/images/movie/*
+report/fonts/*
