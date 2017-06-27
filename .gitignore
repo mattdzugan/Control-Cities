@@ -1,6 +1,9 @@
-#any of the Raw Data because it's huge
+# the Raw Data because it's huge
 */archive/*
-data/*
+*/Archive/*
+data/interim/*
+data/temp/*
+data/Raw/*
 
 #any of my internal TODO files
 *TODO.txt
@@ -12,20 +15,7 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# Lots of unnessary art and sketches
+report/design.svg
+report/images/art/*
+report/images/movie/*
