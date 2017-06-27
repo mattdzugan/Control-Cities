@@ -1,6 +1,8 @@
 # the Raw Data because it's huge
 */archive/*
 */Archive/*
+*archive*
+*Archive*
 data/interim/*
 data/temp/*
 data/Raw/*
