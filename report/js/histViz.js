@@ -1,7 +1,7 @@
 
 var histsvg = d3.select("#histVizSvg"),
     histmargin = {top: 10, right: 2, bottom: 40, left: 20},
-    histwidth = Number(d3.select("#histVizSvg").style("width").split("px")[0]) - histmargin.left - histmargin.right,
+    histwidth = Math.max(375,Number(d3.select("#histVizSvg").style("width").split("px")[0])) - histmargin.left - histmargin.right,
     histheight = 400 - histmargin.top - histmargin.bottom;
 
 

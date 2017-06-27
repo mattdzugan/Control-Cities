@@ -87,7 +87,8 @@ Hope you enjoy!
         </figure>
 
         <p>
-          For more technical details on how exactly I did this, check out <a>the sauce</a>.
+          For more technical details on how exactly I did this, check out
+          <a href="https://github.com/mattdzugan/Control-Cities/tree/master/src/data" target="_blank">the sauce</a>.
         </p>
       </div>
       <div class="minorSection"  id="Portfolio">
@@ -99,7 +100,7 @@ Hope you enjoy!
           The map below shows the segments of signage for each city on the interstate.
           Hover (or tap) on the gray segments to explore which city is which.
           <br><br>
-          <select class="singleHighwayDropDown"> <!-- https://select2.github.io/examples.html#data -->
+          <select id="shDD" class="singleHighwayDropDown"> <!-- https://select2.github.io/examples.html#data -->
           </select>
       </p>
       </div>
@@ -108,28 +109,30 @@ Hope you enjoy!
     <div class="container">
       <div class="minorSection">
         <p>
-          It should be noted that I removed all non-city things like airports, bridges, roads, universities, states,
-          <a href="https://media.tenor.co/images/306f5f1728bb4135a143efcc8008ceda/tenor.gif" target="_blank">countries</a> etc...
+          It should be noted that for this city-focused analysis,
+          I removed all non-city things like airports, bridges, roads, universities, states,
+          <a href="http://imgur.com/gallery/vmuqc9k" target="_blank">countries</a> etc...
         </p>
         <p>
           There's a couple patterns that jump out right away.
-          If you're like me and you've logged your fair share of interstate miles, you'll find these intuitive.
+          If you're like me and you've logged your fair share of interstate miles, you'll find these intuitive:
         </p>
         <ol>
           <li>
             Cities are generally signed from both directions with a signage gap in the middle where the actual city is.
             Usually there are signs for specific roads and exits when approaching the city center, so this makes sense.
-            <a>GOOD EXAMPLE</a>
+            Signage for Long Beach and Santa Monica along
+            <a href="#shDD" onclick="$('.singleHighwayDropDown').select2().val(176).trigger('change').trigger('select2:select');">The 405 illustrates this</a>.
           </li>
           <li>
             Signage for a given city from a given direction is not necessarily continuous.
             Again... We've all experienced this.  Sometimes a route towards a big city can be temporarily overtaken by a medium sized city.
-            <a>GOOD EXAMPLE</a>
+            Signage for Miami along <a href="#shDD" onclick="$('.singleHighwayDropDown').select2().val(62).trigger('change').trigger('select2:select');">I-95 S illustrates this</a>.
           </li>
         </ol>
         <p>
           One thing that came by surprise to me though, was how often there are cities that are only signed from one direction.
-          <a>GOOD EXAMPLES</a>
+          Signage for Omaha and Council Bluffs along <a href="#shDD" onclick="$('.singleHighwayDropDown').select2().val(166).trigger('change').trigger('select2:select');">I-80 illustrates this</a>.
           It would definitely be harder to notice this as a driver as it's not often that you're comparing signs from one direction of your trip to another.
         </p>
         <p>
@@ -230,11 +233,13 @@ Hope you enjoy!
           <ul class="pagination"></ul><br>
         </div>
         </div>
+        <!--
         <p>
           I've actually gone and <a>contacted each of the cities on twitter</a> to notify them of their
           <a href="https://media.giphy.com/media/LoopPmfjMJxiE/giphy.gif" target="_blank">major award(s).</a>
           So far no responses.
         </p>
+      -->
       </div>
 
 
@@ -256,7 +261,9 @@ Hope you enjoy!
           If we had to pick which city we're currently headed towards, we'd probably pick the most prominent city that lies ahead.
         </p>
         <p>
-          But what exactly does prominent mean? Who knows!? I tried 7 definitions:
+          But what exactly does prominent mean? Who knows!?
+          We know we'll want to somehow incorporate both population and distance.
+          I tried 7 definitions:
         </p>
         <ul>
           <li>
@@ -367,34 +374,49 @@ Hope you enjoy!
    <div class="container">
      <div class="minorSection" style="margin-top: 20px;">
        <p>
-         One observation is that there's a couple areas where they all do well,
-         and a couple areas where they all fail.
-         Blah Blah Blah Blah Blah Blah Blah Blah.
-         Blah Blah Blah Blah Blah Blah Blah Blah.
-         Blah Blah Blah Blah Blah Blah Blah Blah.
-         Blah Blah Blah Blah Blah Blah Blah Blah.
+         One observation is that there some areas that are generally predictable by all schemes (IN,OH,KY region),
+         and a couple areas where they all fail (anything between Texas and Canada).
+         Part of this could certainly be due to the fact that this is a city-focused analysis,
+         and some of the more rural signage could be for states and not cities, a gauranteed failure for any of our schemes.
       </p>
+      <p>
+        As the data below indicates, the simpler methods of "choose the biggest city within X miles" tend to do pretty well overall,
+        correctly predicting signage on 35% of the US interstate mileage.
+     </p>
+      <h4>Comparing Prediction Accuracy</h4>
       <svg id="histVizSvg"></svg>
       <button id="histButton">show details</button>
       <p>
-        Blah Blah Blah Blah Blah Blah Blah Blah.
-        Blah Blah Blah Blah Blah Blah Blah Blah.
-        Blah Blah Blah Blah Blah Blah Blah Blah.
-        Blah Blah Blah Blah Blah Blah Blah Blah.
+        Looking at the interstate-by-interstate breakdown (tap the "show details" button), indicates that
+        though the <span style="font-weight:bold; color:#ED7664">Big and Close</span> method was the best overall predictor,
+        <span style="font-weight:bold; color:#69b93c">Tallest Tower</span>, (3rd best overall) was able to score the highest success-rate for a single highway,
+        correctly predicting 92.87% of signs on the Northbound side of I-37.
      </p>
      </div>
 
       <div class="minorSection"  id="Bio">
         <h2>Final Thoughts</h2>
         <p>
-        Blah Blah Blah Blah Blah Blah Blah Blah.
-        Blah Blah Blah Blah Blah Blah Blah Blah.
-        Blah Blah Blah Blah Blah Blah Blah Blah.
-        Blah Blah Blah Blah Blah Blah Blah Blah.
+        Well that was fun.
+        This all began from my curiosity regarding the signs for Sacramento I see in the middle of LA.
+        I now can chalk it up to the fact the signs tend to match the urbanicity of the source to the destination.
+        Also, though this LA-to-Sac-town phenomena is in the top 10 for <a href="#rankingsHolder">distance from sign to city</a>,
+        it doesn't hold a candle to 74-person Butte City Idaho's 218 mile-away sign on a 'per-capita' basis.
        </p>
        <p>
+       I'm definitely interested in trying some more prediction schemes in the future that incporporate some of the observations I've learned along the way.
+       Paritucularly the afformentioned trend of rural areas tending to sign for nearby rural areas, and urban areas tending to sign for more distant urban areas.
+      </p>
+      <p>
+      And remember how I mentioned that the 25% accurate <span style="font-weight:bold; color:#69b93c">Tallest Tower</span> prediction scheme was analagous to The perceived loudness of a city full of people chanting in unison?
+      Well just think... next time you're driving along the interstate...
+      Look at the signs above you, and imagine a zombie mob of the citizens of that town chanting <em>COME VISIT US IN SEATTLE...</em>
+      Well, 25% of the time, that zombie mob would be louder than all the other town's zombie mobs! It's science!
+     </p>
+       <p>
          Also, <a target="_blank" href="https://youtu.be/nT280DVMvwQ?t=8s" >100 points to you</a> if you noticed the highway sign font.
-         I'm guessing the slanty top of the <span class="justTheFont">b d h k l t</span> was either a dead give-away, or that you'll now notice it on every sign for the rest of your life and think of this article every time you see it.
+         I'm guessing the slanty top of the <span class="justTheFont">b d h k l t</span> was either a dead give-away,
+         or something that you'll now notice it on every sign for the rest of your life and think of this article every time you see it.
        </p>
      </div>
     </div>

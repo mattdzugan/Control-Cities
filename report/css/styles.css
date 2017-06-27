@@ -184,6 +184,9 @@ html {
   stroke-linecap:"round";
   stroke-width: 3;
 }
+.singleHighwayDropDown{
+  max-width: 100%;
+}
 .segmentLine{
   fill: none;
   stroke-linecap:"round";
